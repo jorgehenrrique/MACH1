@@ -15,65 +15,85 @@
 </head>
 <body>
     <h1 id="topo">Curriculo Vitae</h1>
-    <nav>
-        <a href="#dadosP">Dados Pessoais</a>
-        <a href="#contatos">Contatos</a>
-        <a href="#dadosPro">Dados Profissionais</a>
-        <a href="#formacao">Formação</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="#dadosP">Dados Pessoais</a>
+            <a href="#contatos">Contatos</a>
+            <a href="#dadosPro">Dados Profissionais</a>
+            <a href="#formacao">Formação</a>
+        </nav>
+    </header>
     <br>
     <hr>
-    <h3 id="dadosP">Dados Pessoais</h3>
-    <img src="https://static.escolakids.uol.com.br/2022/02/toupeira-saindo-do-solo.jpg" 
-    alt="a imagem contem uma toupeira" width="150px" height="150px">
-    <p><b>Nome:</b> Toupeira Alcantara</p>
-    <p><b>Idade:</b> 78 anos</p>
-    <br>
-    <hr>
-    <h3 id="contatos">Contatos</h3>
-    <p><b>Telefone:</b> +55 77 88877-6655</p>
-    <p><b>E-mail:</b><a href="mailto:julio@email.com.br"> julio@email.com.br</a></p>
-    <p><b>Site:</b> <a href="https://www.atoupeira.com.br/" title="Vai para o site da toupeira" target="_blank">Sita da Toupeirinha</a></p>
-    <p>Brasilia, Goias</p>
-    <br>
-    <hr>
-    <h3 id="dadosPro">Dados Profissionais</h3>
-    <p><b>CEO da perfurações SA</b></p>
-    <p><b>Empressa:</b> Furadores de Terrenos</p>
-    <p><b>Período:</b> 1999 - Atual</p>
-    <p>Fundados da empresa e presente em todos projetos de perfurações etc.</p>
-    <br>
-    <br>
-    <p><b>Freelancer Pleno</b></p>
-    <p><b>Empresa:</b> Terra Média Lmtd</p>
-    <p><b>Período:</b> 1990-1998</p>
-    <p>Furava bastante terrenos por ae.</p>
-    <br>
-    <br>
-    <p><b>Estagiario na Fazendinha</b></p>
-    <p><b>Empresa:</b> Fazenda bom sucesso</p>
-    <p><b>Período:</b> 1985-1989</p>
-    <p>Furava e plantava.</p>
-    <br>
-    <hr>
-    <h2 id="formacao">Formação</h2>
-    <p><b>Curso:</b> Espcialização em perfurações profundas na USP</p>
-    <p><b>Curso:</b> Educação e encinamentos feitos em casa.</p>
-    <ul>
-        <li>
-            Universidade de Alamedas do sul
-        </li>
-    </ul>
-    <p><b>Curso:</b> EAD Conhecimento fundamento de relevos</p>
-    <ul>
-        <li>
-            UniEsti <a href="pdfEx01.pdf" title="Certificado de curso" download>Baixar Certificado PDF</a>
-        </li>
-    </ul>
-    <br>
-    <hr>
-    <br>
-    <a href="#topo">Topo da Página</a>
-    
+    <main>
+        <section>
+            <h3 id="dadosP">Dados Pessoais</h3> <!-- Dados pessoais e id para o nav-->
+            <img src="https://static.escolakids.uol.com.br/2022/02/toupeira-saindo-do-solo.jpg" 
+            alt="a imagem contem uma toupeira" width="150px" height="150px">
+            <p><b>Nome:</b> Toupeira Alcantara</p>
+            <p><b>Idade:</b> 78 anos</p>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <h3 id="contatos">Contatos</h3> <!-- Contatos e id para nav-->
+            <p><b>Telefone:</b> +55 77 88877-6655</p>
+            <p><b>E-mail:</b><a href="mailto:julio@email.com.br"> julio@email.com.br</a></p>
+            <p><b>Site:</b> <a href="https://www.atoupeira.com.br/" title="Vai para o site da toupeira" target="_blank">Sita da Toupeirinha</a></p>
+            <p>Brasilia, Goias</p>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <article>
+                <h3 id="dadosPro">Dados Profissionais</h3> <!-- Dados Profissionais e id para o nav-->
+                <p><b>CEO da perfurações SA</b></p>
+                <p><b>Empressa:</b> Furadores de Terrenos</p>
+                <p><b>Período:</b> 1999 - Atual</p>
+                <p>Fundados da empresa e presente em todos projetos de perfurações etc.</p>
+            </article>
+            <br>
+            <br>
+            <article>
+                <p><b>Freelancer Pleno</b></p>
+                <p><b>Empresa:</b> Terra Média Lmtd</p>
+                <p><b>Período:</b> 1990-1998</p>
+                <p>Furava bastante terrenos por ae.</p>
+            </article>
+            <br>
+            <br>
+            <article>
+                <p><b>Estagiario na Fazendinha</b></p>
+                <p><b>Empresa:</b> Fazenda bom sucesso</p>
+                <p><b>Período:</b> 1985-1989</p>
+                <p>Furava e plantava.</p>
+            </article>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <h2 id="formacao">Formação</h2> <!-- Formação e id para o nav -->
+            <p><b>Curso:</b> Espcialização em perfurações profundas na USP</p>
+            <p><b>Curso:</b> Educação e encinamentos feitos em casa.</p>
+            <ul>
+                <li>
+                    Universidade de Alamedas do sul
+                </li>
+            </ul>
+            <p><b>Curso:</b> EAD Conhecimento fundamento de relevos</p>
+            <ul>
+                <li>
+                    <!-- Link para baixar o curriculo -->
+                    UniEsti <a href="pdfEx01.pdf" title="Certificado de curso" download>Baixar Certificado PDF</a>
+                </li>
+            </ul>
+        </section>
+        <br>
+        <hr>
+        <br>
+    </main>
+    <footer>
+        <a href="#topo">Topo da Página</a>
+    </footer>
 </body>
 </html>
