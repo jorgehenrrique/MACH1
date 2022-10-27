@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 07 Pratica</title>
+</head>
+<style>
+    body {
+        display: grid;
+        grid-gap: 400px;
+    }
+</style>
+
+<body>
+    <h1>Conceito e aplicação do Lazy Loading - prática</h1>
+
+    <figure>
+        <img src="assets/images/01-320w.jpg" loading="lazy" alt="uma flor" title="Uma flor amarela">
+        <figcaption>Uma flor amarela</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/02-320w.jpg" loading="lazy" alt="arara colorida" title="arara colorida voando">
+        <figcaption>arara colorida voando</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/03-320w.jpg" loading="lazy" alt="lua" title="lua derretendo">
+        <figcaption>lua derretendo</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/04-320w.jpg" loading="lazy" alt="ponte" title="ponte na praia">
+        <figcaption>ponte na praia</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/05-320w.jpg" loading="lazy" alt="bola de vidro" title="bola de vidro">
+        <figcaption>bola de vidro</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/06-320w.jpg" loading="lazy" alt="filtro dos sonhos" title="filtro dos sonhos">
+        <figcaption>filtro dos sonhos</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/07-320w.jpg" loading="lazy" alt="neom" title="imagens de neons">
+        <figcaption>imagens de neons</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/08-320w.jpg" loading="lazy" alt="olho" title="reflexo no olho">
+        <figcaption>reflexo no olho</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/09-320w.jpg 320w,
+                    assets/images/09-480w.jpg 480w,
+                    assets/images/09-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/09-800w.jpg" loading="lazy" alt="homem vira raiz" title="homem virando raiz no deserto">
+        <figcaption>homem virando raiz no deserto</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/10-320w.jpg 320w,
+                    assets/images/10-480w.jpg 480w,
+                    assets/images/10-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/10-800w.jpg" loading="lazy" alt="coracao" title="coracao em maos">
+        <figcaption>coracao em maos</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/11-320w.jpg 320w,
+                    assets/images/11-480w.jpg 480w,
+                    assets/images/11-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/11-800w.jpg" loading="lazy" alt="sombra" title="sombra com borboleta">
+        <figcaption>sombra com borboleta</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/12-320w.jpg 320w,
+                    assets/images/12-480w.jpg 480w,
+                    assets/images/12-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/12-800w.jpg" loading="lazy" alt="lampada" title="lampada na chuva">
+        <figcaption>lampada na chuva</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/13-320w.jpg 320w,
+                    assets/images/13-480w.jpg 480w,
+                    assets/images/13-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/13-800w.jpg" loading="lazy" alt="livro" title="livro aberto">
+        <figcaption>livro aberto</figcaption>
+    </figure>
+    <figure>
+        <img srcset="assets/images/14-320w.jpg 320w,
+                    assets/images/14-480w.jpg 480w,
+                    assets/images/14-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+        src="assets/images/14-800w.jpg" loading="lazy" alt="olho" title="olho com bandeira">
+        <figcaption>olho com bandeira</figcaption>
+    </figure>
+    <!-- <figure>
+        <img src="assets/images/15-320w.jpg" loading="lazy" alt="lobo" title="lobo em neom">
+        <figcaption>lobo em neom</figcaption>
+    </figure> -->
+    <figure>
+        <img srcset="assets/images/15-320w.jpg 320w,
+                    assets/images/15-480w.jpg 480w,
+                    assets/images/15-800w.jpg 800w" 
+            sizes="(max-width: 320px) 280px,
+                    (max-width: 480px) 440px,
+                    800px" 
+            src="assets/images/15-800w.jpg" loading="lazy" alt="Lobo" title="Loba em neom">
+        <figcaption>lobo em neom</figcaption>
+    </figure>
+
+
+</body>
+
+</html>
