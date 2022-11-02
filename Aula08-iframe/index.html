@@ -12,12 +12,17 @@
     <h1>Minha página</h1>
     <p>Página aula 08 pratica</p>
     <!-- um video -->
-    <video controls src="assets/movies/vans.mp4" 
-        poster="assets/images/gatinhos.jpg">
+    <video controls preload="metadata" poster="assets/images/gatinhos.jpg" width="480px">
+        <source src="assets/movies/jorge.mp4" type="video/mp4">
+        <!-- O navegador irá escolher o primeiro video compatível se tiver mais opcoes -->
+        <p>Este vídeo é incompatível, por favor utilize o NavegadorX.</p>
+
+        <!-- uma legenda -->
+        <track kind="subtitles" src="assets/sub/apres_pt.vtt" srclang="pt" label="Portugues" default>
     </video>
-    <!-- uma legenda -->
 
     <!-- um audio -->
+    <!-- audio descartado pelo professor -->
 
     <br><hr>
     <!-- curriculo via iFrame com 100% da pagina -->
