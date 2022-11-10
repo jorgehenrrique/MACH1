@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 atividade pratica</title>
+</head>
+<style>
+    body {
+        display: flex;
+        margin-top: 20px;
+        font: 1em sans-serif;
+    }
+    form {
+        margin: auto;
+    }
+    div, fieldset {
+        margin-top: 15px;
+    }
+    input {
+        border-color: black;
+        border-width: 1px;
+        padding: 5px;
+        text-indent: 5px;
+    }
+</style>
+
+<body>
+
+    <form action="http://mach1.great-site.net/cadastroRecruta.php" method="post" target="_blank"
+        autocomplete="off" enctype="multipart/form-data">
+        <h1 style="font: 2em sans-serif;">Aliste-se</h1>
+        
+        <div>
+            <label for="email">Seu e-mail</label><br>
+            <input type="email" id="email" name="email" placeholder="Seuemail@mail.com">
+        </div>
+        <div>
+            <label for="pwd">Senha</label><br>
+            <input type="password" id="pwd" name="senha" placeholder="Crie sua senha">
+        </div>
+        <div>
+            <label for="nome">Nome completo</label><br>
+            <input type="text" id="nome" name="nomeCompleto" placeholder="Informe o seu nome">
+        </div>
+        <div>
+            <label for="ncpf">CPF (Apenas números)</label><br>
+            <input type="text" id="ncpf" name="cpf" maxlength="11" placeholder="00000000000">
+        </div>
+        <div>
+            <label for="nrg">RG (Apenas números)</label><br>
+            <input type="text" id="nrg" name="rg" maxlength="11" placeholder="00000000000">
+        </div>
+        <div>
+            <label for="data">Data de nascimento</label><br>
+            <input type="date" id="data" name="nascimento">
+        </div>
+        <fieldset>
+            <legend>Necessidades especiais</legend>
+            <input type="radio" id="sim" name="necessidadesEspeciais" value="sim">
+            <label for="sim">Sim</label><br>
+            <input type="radio" id="nao" name="necessidadesEspeciais" value="nao">
+            <label for="nao">Não</label><br>
+        </fieldset>
+        <div>
+            <label for="estado">Estado de residência</label><br>
+            <select name="estado" id="estado">
+                <option value="" disabled selected>Selecione o seu estado</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+                <option value="MG">MG</option>
+                <option value="GO">GO</option>
+            </select>
+        </div>
+        <fieldset>
+            <legend>Especializa desejada</legend>
+            <legend>Especialização desejada</legend>
+            <input type="checkbox" value="backend" id="backend" name="especializacao1">
+            <label for="backend">Mecânica da aeronaves (Back-end)</label><br>
+            <input type="checkbox" value="frontend" id="frontend" name="especializacao2">
+            <label for="frontend">Montagem da aeronaves (Front-end)</label><br>
+            <input type="checkbox" value="fullStack" id="fullStack" name="especializacao3">
+            <label for="fullStack">Engenheiro de aeronaves (FullStack)</label><br>
+            <input type="checkbox" value="tester" id="tester" name="especializacao4">
+            <label for="tester">Piloto (Tester)</label><br>
+            <input type="checkbox" value="scrumMaster" id="scrumMaster" name="especializacao5">
+            <label for="scrumMaster">Operador de trafego aéreo (Scrum Master)</label>
+        </fieldset>
+        <div>
+            <label for="myfile">Adicione sua foto:</label>
+            <input type="file" id="myfile" name="foto">
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
+<!-- email
+senha
+nomeCompleto
+cpf
+rg
+nascimento
+necessidadesEspeciais [Para os campos de radio]
+estado [Para os campos de chackbox]
+especializacao1
+especializacao2
+especializacao3
+especializacao4
+especializacao5
+foto -->

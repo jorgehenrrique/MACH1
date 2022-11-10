@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade aula 11</title>
+
+    <style>
+        form {
+            /* Apenas para centralizar o form na página */
+            margin: 0 auto;
+            /* width: 300px; */
+            /* Para ver as bordas do formulário */
+            padding: 1em;
+        }
+
+        form,
+        div,
+        fieldset input {
+            margin-top: 15px;
+        }
+
+        input,
+        textarea {
+            /* Para certificar-se que todos os campos de texto têm as mesmas configurações de fonte. Por padrão, textareas ter uma fonte monospace*/
+            font: 1em sans-serif;
+            /* Para dar o mesmo tamanho a todos os campo de texto */
+            /* width: 300px; */
+            padding-inline-start: 5%;
+            /* padding-inline-end: 5%; */
+            /* padding-inline: 80px; */
+            /* Para harmonizar o look & feel das bordas nos campos de texto*/
+            border: 1px solid #999;
+
+        }
+
+        form,
+        fieldset {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://bemach1.com.br/html-aula-forms/cadastroRecruta.php -->
+
+    <form action="https://www.w3schools.com/action_page.php" method="post" target="_blank">
+        <h1>Aliste-se</h1>
+
+        <div>
+            <label for="email">Seu e-mail</label><br>
+            <input type="email" placeholder="seuemail@mail.com" id="email" name="email">
+        </div>
+        <div>
+            <label for="senha">Senha</label><br>
+            <input type="password" placeholder="Crie uma senha" id="senha" name="senha">
+        </div>
+        <div>
+            <label for="nome">Nome completo</label><br>
+            <input type="text" placeholder="Informe o seu nome" id="nome" name="nomeCompleto">
+        </div>
+        <div>
+            <label for="cpf">CPF (Apenas números)</label><br>
+            <input type="text" placeholder="00000000000" maxlength="11" id="cpf" name="cpf">
+        </div>
+        <div>
+            <label for="rg">RG (Apenas números)</label><br>
+            <input type="text" placeholder="00000000000" maxlength="11" id="rg" name="rg">
+        </div>
+        <div>
+            <label for="date">Date de nascimento</label><br>
+            <input type="date" id="date" name="date">
+        </div><br>
+        <fieldset>
+            <legend>Necessidades especiais</legend>
+            <input type="radio" name="esp" value="sim" id="sim">
+            <label for="sim">Sim</label><br>
+            <input type="radio" name="esp" value="nao" id="nao">
+            <label for="nao">Não</label>
+        </fieldset>
+        <div>
+            <label for="opcoes">Estado de residência</label><br>
+            <select name="estados" id="opcoes">
+                <option value="" disabled selected>Selecione o seu estado</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+                <option value="MG">MG</option>
+                <option value="GO">GO</option>
+            </select>
+        </div>
+        <fieldset>
+            <legend>Especialização desejada</legend>
+            <input type="checkbox" value="backend" id="backend" name="backend">
+            <label for="backend">Mecânica da aeronaves (Back-end)</label><br>
+            <input type="checkbox" value="frontend" id="frontend" name="frontend">
+            <label for="frontend">Montagem da aeronaves (Front-end)</label><br>
+            <input type="checkbox" value="fullStack" id="fullStack" name="fullStack">
+            <label for="fullStack">Engenheiro de aeronaves (FullStack)</label><br>
+            <input type="checkbox" value="tester" id="tester" name="tester">
+            <label for="tester">Piloto (Tester)</label><br>
+            <input type="checkbox" value="scrumMaster" id="scrumMaster" name="scrumMaster">
+            <label for="scrumMaster">Operador de trafego aéreo (Scrum Master)</label>
+        </fieldset>
+        <div>
+            <label for="file">Adicione sua foto:</label>
+            <input type="file" id="file" multiple name="file">
+        </div>
+        <div class="button">
+            <button type="submit">Enviar</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
