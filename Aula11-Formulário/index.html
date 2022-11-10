@@ -13,12 +13,16 @@
         margin-top: 20px;
         font: 1em sans-serif;
     }
+
     form {
         margin: auto;
     }
-    div, fieldset {
+
+    div,
+    fieldset {
         margin-top: 15px;
     }
+
     input {
         border-color: black;
         border-width: 1px;
@@ -29,10 +33,10 @@
 
 <body>
 
-    <form action="http://mach1.great-site.net/cadastroRecruta.php" method="post" target="_blank"
-        autocomplete="off" enctype="multipart/form-data">
+    <form action="http://mach1.great-site.net/cadastroRecruta.php" method="post" target="_blank" autocomplete="off"
+        enctype="multipart/form-data">
         <h1 style="font: 2em sans-serif;">Aliste-se</h1>
-        
+
         <div>
             <label for="email">Seu e-mail</label><br>
             <input type="email" id="email" name="email" placeholder="Seuemail@mail.com">
@@ -75,7 +79,6 @@
             </select>
         </div>
         <fieldset>
-            <legend>Especializa desejada</legend>
             <legend>Especialização desejada</legend>
             <input type="checkbox" value="backend" id="backend" name="especializacao1">
             <label for="backend">Mecânica da aeronaves (Back-end)</label><br>
