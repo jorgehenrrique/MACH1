@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 03D - pseudo-</title>
+</head>
+<style>
+    #piano > [class$="Sus"] {
+        background-color: #000;
+        color: #fff;
+        width: 50px;
+        height: 125px;
+        margin-left: -26px;
+        margin-right: -26px;
+        border: solid 1px black;
+    }
+</style>
+<body>
+    <div id="piano">
+        <div class="nota do" data-nota="C3">Do</div>
+        <div class="nota doSus" data-nota="CSus3">Do#</div>
+        <div class="nota re" data-nota="D3">Re</div>
+        <div class="nota reSus" data-nota="DSus3">Re#</div>
+        <div class="nota mi" data-nota="E3">Mi</div>
+        <div class="nota fa" data-nota="F3">Fa</div>
+        <div class="nota faSus" data-nota="FSus3">Fa#</div>
+        <div class="nota sol" data-nota="G3">Sol</div>
+        <div class="nota solSus" data-nota="GSus3">Sol#</div>
+        <div class="nota la" data-nota="A3">La</div>
+        <div class="nota laSus" data-nota="ASus3">La#</div>
+        <div class="nota si" data-nota="B3">Si</div>
+    </div>
+</body>
+</html>
