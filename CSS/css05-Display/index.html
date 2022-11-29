@@ -11,15 +11,20 @@
         box-sizing: border-box;
     } */
     .tabela {
-        display: inline-grid;
+        /* display: inline-grid; */
+        display: table;
     }
     .coluna {
         border: solid 1px;
         padding: 10px;
-        float: left;
+        /* float: left; */
+        display: table-cell;
     }
     .linha:nth-last-of-type(odd) {
         background-color: #e0e0e0;
+    }
+    .linha {
+        display: table-row;
     }
 </style>
 <body>
