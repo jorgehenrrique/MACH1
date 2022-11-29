@@ -7,29 +7,31 @@
     <title>css 04C - Box-Model</title>
 </head>
 <style>
+    div {
+        box-sizing: border-box;
+    }
     div.profile {
-        /* margin: 0px; */
-        padding: 100px;
-        border: orange 10px dotted;
-        border-radius: 100%;
+        /* padding: 100px; */
+        border: orange 2px dotted;
+        border-radius: 50%;
         width: 100px;
         height: 100px;
     }
     .profile div {
-        padding: 50px;
-        border: blue 10px solid;
-        border-radius: 100%;
+        /* padding: 50px; */
+        border: blue 5px solid;
+        border-radius: 50%;
+        margin: 23px;
         width: 50px;
         height: 50px;
-        margin: -35px;
     }
     .profile div div {
-        padding: 10px;
-        border: green 10px double;
-        border-radius: 100%;
+        /* padding: 10px; */
+        border: green 3px double;
+        border-radius: 50%;
         height: 10px;
         width: 10px;
-        margin: auto;
+        margin: 15px;
     }
 </style>
 <body>
