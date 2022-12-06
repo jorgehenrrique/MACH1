@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula CSS 08-B</title>
+</head>
+<style>
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-image: url(./Mach.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative;
+}
+div.panel{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* opacity: 0.9; */
+    box-shadow: 0 0 50px blue;
+    margin-top: 200px;
+
+    position: absolute;
+    right: calc(50vw - 150px);
+}
+</style>
+<body>
+    <main>
+        <div class="panel"></div>
+    </main>
+</body>
+</html>
