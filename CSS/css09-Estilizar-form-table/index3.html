@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 CSS-C</title>
+</head>
+<style>
+.cadastro{
+    width: 300px;    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+input{
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+input:disabled{
+    background-color: #E0E0E0;
+}
+input[readonly]{
+    color: #A0A0A0;
+    border-color: #A0A0A0;
+    font-weight: bold;
+}
+input:required{
+    border-color: red;
+}
+</style>
+<body>
+    <div class="cadastro">
+        <form>
+            <input type="text" value="TEXTO TESTE">
+            <input type="text" disabled value="TEXTO TESTE">
+            <input type="text" readonly value="TEXTO TESTE">
+            <input type="text" required value="TEXTO TESTE">
+        </form>
+    </div>
+</body>
+</html>
