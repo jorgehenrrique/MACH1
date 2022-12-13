@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 CSS-B</title>
+</head>
+<style>
+.informacoes div{
+    /* transition-property: color; */
+    /* transition-duration: .1s; */
+    /* transition-timing-function: linear; */
+    transition-delay: .1s;
+}
+.informacoes{
+    background-color: yellow;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    color: yellow;
+    transition: .8s cubic-bezier(0,.98,.96,.08) .2s;
+    /* transition: all 1s ease-out .2s; */
+    /* transition: .8s cubic-bezier(0,1,1,0) .2s; */
+    /* transition-timing-function: ease-in-out; */
+}
+.informacoes:hover{
+    border-radius: 0;
+    color: black;
+    width: 350px;
+    transition-timing-function: ease-in-out;
+}
+</style>
+<body>
+    <div class="informacoes">
+        <div>
+            <h1>Titulo do produto</h1>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+    </div>
+</body>
+</html>
