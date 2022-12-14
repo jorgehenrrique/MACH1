@@ -8,10 +8,9 @@
 </head>
 <style>
 .informacoes div{
-    /* transition-property: color; */
-    /* transition-duration: .1s; */
-    /* transition-timing-function: linear; */
-    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
+    transition-duration: .4s;
+    transition-delay: .2s;
 }
 .informacoes{
     background-color: yellow;
@@ -20,16 +19,25 @@
     border-radius: 50%;
     overflow: hidden;
     color: yellow;
-    transition: .8s cubic-bezier(0,.98,.96,.08) .2s;
-    /* transition: all 1s ease-out .2s; */
-    /* transition: .8s cubic-bezier(0,1,1,0) .2s; */
-    /* transition-timing-function: ease-in-out; */
+    
+    transition-duration: .8s, .8s;
+    transition-delay: .2s, .4s;
+    transition-property: border-radius, width;
+    transition-timing-function: ease;
+    /* transition-timing-function: cubic-bezier(0,.98,.96,.08); /ALTERNATIVA*/
+    
+    /* transition: .8s cubic-bezier(0,.98,.96,.08) .2s, color .8s .5s, width .8s .3s; /ALTERNATIVA */
+    /* transition: border-radius 2s, color 2s, width ease 1s; /ALTERNATIVA */
 }
 .informacoes:hover{
-    border-radius: 0;
-    color: black;
+    border-radius: 20px;
     width: 350px;
-    transition-timing-function: ease-in-out;
+}
+.informacoes:hover div{
+    color: black;
+    transition-timing-function: ease-in;
+    transition-duration: .4s;
+    transition-delay: 1s;
 }
 </style>
 <body>
