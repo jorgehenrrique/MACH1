@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 CSS-A</title>
+</head>
+<style>
+.panel{
+    width: 300px;
+    
+    display: flex;
+    border: 3px solid;
+    padding: 20px 0;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.elemento{
+    width: 50px;
+    height: 50px;
+
+    transition: .3s;
+}
+.cor-1{
+    background-color: black;
+}
+.cor-2{
+    background-color: blue;
+}
+.cor-3{
+    background-color: green;
+}
+.cor-4{
+    background-color: red;
+}
+.cor-5{
+    background-color: yellow;
+}
+.elemento:hover{ /*Sobre as linhas abaixo*/
+    transform: scale(1.5);
+}
+/* .cor-2:hover{
+    transform: scale(1.5);
+}
+.cor-3:hover{
+    transform: scale(1.5);
+}
+.cor-4:hover{
+    transform: scale(1.5);
+}
+.cor-5:hover{
+    transform: scale(1.5);
+} */
+</style>
+<body>
+    <div class="panel">
+        <div class="elemento cor-1"></div>
+        <div class="elemento cor-2"></div>
+        <div class="elemento cor-3"></div>
+        <div class="elemento cor-4"></div>
+        <div class="elemento cor-5"></div>
+        <div class="elemento cor-1"></div>
+        <div class="elemento cor-2"></div>
+        <div class="elemento cor-3"></div>
+        <div class="elemento cor-4"></div>
+        <div class="elemento cor-5"></div>
+    </div>
+</body>
+</html>
