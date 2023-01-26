@@ -1,10 +1,9 @@
 {
     let anosNaEscola = prompt('Quantos anos voce esta vinculado na escola?');
-    // console.log(typeof anosNaEscola);
+    
     if (isNaN(anosNaEscola)) {
         alert('Voce deve digitar apenas números para receber o dado correto.');
     }
-    // console.log(typeof anosNaEscola);
 
     let reciclagens = anosNaEscola / 2;
     reciclagens = parseInt(reciclagens);
