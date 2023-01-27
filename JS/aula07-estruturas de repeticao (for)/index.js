@@ -5,6 +5,7 @@
 // receber essa lista
 // devolver a posicao e o nome do piloto
 // os 3 primeiros exibir pódio
+// Valide se existe conteúdo preenchido
 
 {
     let piloto = prompt('Informe os nomes dos pilotos, separados por virgula: ');
