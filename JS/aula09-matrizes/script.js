@@ -21,6 +21,6 @@
         console.log('\n');
     }
 
-    console.log('A matriz representa uma tabela de multiplicação.');
-    console.log('Cada linha representa a multiplicação do primeiro número vezes o segundo, até a ultima linha.');
+    alert('A matriz representa uma tabela de multiplicação.');
+    alert('Cada linha representa a multiplicação do primeiro número vezes o segundo, até a ultima linha.');
 }
