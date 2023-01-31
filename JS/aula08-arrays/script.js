@@ -20,7 +20,6 @@ d. Se o usu√°rio optar por adicionar o produto, receba o valor utilizando a fun√
 
     // b
     let codigo = prompt('Informe o codigo do produto: ');
-    // console.log(`Produdo selecionado: ${compras[codigo]}`);
 
     // c
     if (codigo < 1 || codigo > compras.length-1){
@@ -28,9 +27,9 @@ d. Se o usu√°rio optar por adicionar o produto, receba o valor utilizando a fun√
         let novoProduto = '';
         novoProduto = prompt(`Deseja adicionar o produto? s ou n: `);
         if (novoProduto.toLowerCase() == 's'){
-            compras[codigo] = prompt('Informe o nome do produto: ');
+            compras.push(prompt('Informe o nome do produto: '));
             // d
-            alert(`Produto incluido com sucesso: ${codigo} - ${compras[codigo]}`)
+            alert(`Produto incluido com sucesso: ${compras.length-1} - ${compras[compras.length-1]}`)
         } else {
             alert('At√© logo.');
         }
