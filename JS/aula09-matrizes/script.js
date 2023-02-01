@@ -20,7 +20,8 @@
         }
         console.log('\n');
     }
-
+    // b
     alert('A matriz representa uma tabela de multiplicação.');
-    alert('Cada linha representa a multiplicação do primeiro número vezes o segundo, até a ultima linha.');
+    // c
+    alert('Chega-se na conclusão observando que, cada linha representa a multiplicação do primeiro número vezes o segundo, até a ultima linha.');
 }
