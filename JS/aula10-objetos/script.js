@@ -8,7 +8,7 @@
 { // Exercicio aula 10
     // a
     let apartamento = {
-        tamanho: '150mt',
+        tamanho: '150m2',
         mobiliado: 'sim',
         suites: 2,
         quartos: 4,
