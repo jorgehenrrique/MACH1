@@ -32,15 +32,15 @@
         let posicao = 0;
         let cpfsValidos = 0;
         for (let cpf of verificaCPF(listaCpf)) {
-            if (cpf == 'valido!'){
-                alert(`${posicao+1}º CPF: ${formataCPF(listaCpf)[posicao]}, ${cpf}`);
+            if (cpf == 'valido!') {
+                alert(`${posicao + 1}º CPF: ${formataCPF(listaCpf)[posicao]}, ${cpf}`);
                 cpfsValidos++;
             } else {
-                alert(`${posicao+1}º CPF: ${cpf}`);
+                alert(`${posicao + 1}º CPF: ${cpf}`);
             };
             posicao++;
         };
-        alert(`CPFs válidos: ${cpfsValidos}`)
+        alert(`CPFs válidos: ${cpfsValidos}`);
     }
 
     exibeCPF(); // Chama a funcao de exibir os cpf, que chama a funcao de verificacao, e tbm chama a funcao de formatacao

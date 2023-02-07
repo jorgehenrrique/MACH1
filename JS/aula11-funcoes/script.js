@@ -14,16 +14,17 @@
 
 {   //a // b
     function validaQtd() { // Valida se o usuario digitou numeros e a quantidade 11
+        let cpfQtd = 0;
         do {
-            cpf = prompt('Digite seu CPF, são 11 números: ');
-            cpfQtd = 0;
+            let cpf = prompt('Digite seu CPF, são 11 números: ');
             if (!isNaN(cpf)) {
                 cpfQtd = cpf.length;
+                return cpf;
             } else {
                 alert('Digite números!');
             }
         } while (cpfQtd != 11);
-        return cpf;
+        // return cpf;
     };
 
     // c
