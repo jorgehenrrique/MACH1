@@ -28,33 +28,24 @@
 
     // c
     function formataCpf(cpf) { // Formata CPF adicionando os caracteres exigidos
-        let recebeCpf = cpf.slice(0, 3) + '.' + cpf.slice(3, 6) + '.' + cpf.slice(6, 9) + '-' + cpf.slice(9);
+        let recebeCpf = `${cpf.slice(0,3)}.${cpf.slice(3,6)}.${cpf.slice(6,9)}-${cpf.slice(9)}`;
         return recebeCpf;
     };
 
     // d
-    function exibiCpf(cpf) { // Exibe o CPF formatado para o usuário
-        alert(`CPF formatado: ${cpf}`);
+    function exibiCpf() { // Exibe o CPF formatado para o usuário
+        let cpfFormatado = formataCpf(validaQtd()); // Busca o cpf formatado da funcao: formataCpf, passando como argumento a funcao: validaQtd
+        alert(`CPF formatado: ${cpfFormatado}`);
     }
 
-    cpf = validaQtd(); // Variável recebe o CPF da funcao
-
-    let cpfString = cpf.toString(); // Converte CPF para string
-
-    let cpfFormatado = formataCpf(cpfString); // Passa o CPF para funcao, e recebe ele formatado
-
-    exibiCpf(cpfFormatado); // Passa o CPF formatado para a funcao que o exibirá
-
+    exibiCpf(); // Executa a funcao de exibir e dentro dela ela chamará as outras
 
     // Pergunta se deseja formatar novamente
     while (true){
         let sim = '';
         sim = prompt('Deseja formatar outro CPF? responda com, s ou n: ');
         if (sim.toLowerCase() == 's'){
-            cpf = validaQtd();
-            let cpfString = cpf.toString();
-            let cpfFormatado = formataCpf(cpfString);
-            exibiCpf(cpfFormatado);
+            exibiCpf();
         } else {
             break;
         }
