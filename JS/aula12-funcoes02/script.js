@@ -19,7 +19,7 @@
     }
 
     // c
-    function formataCPF(cpfs) { // Formata os cpfs, e os atribuem numa lista
+    function formataCPF(...cpfs) { // Formata os cpfs, e os atribuem numa lista
         let cpfFormatado = [];
         for (let cpf of cpfs) {
             cpfFormatado.push(`${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9)}`);
@@ -33,7 +33,7 @@
         let cpfsValidos = 0;
         for (let cpf of verificaCPF(listaCpf)) {
             if (cpf == 'valido!') {
-                alert(`${posicao + 1}º CPF: ${formataCPF(listaCpf)[posicao]}, ${cpf}`);
+                alert(`${posicao + 1}º CPF: ${formataCPF(...listaCpf)[posicao]}, ${cpf}`);
                 cpfsValidos++;
             } else {
                 alert(`${posicao + 1}º CPF: ${cpf}`);
