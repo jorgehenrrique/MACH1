@@ -7,7 +7,7 @@
 ● A organização do seu código e a nomenclatura das variáveis/funções será avaliada.
  */
 
-let exibeDescontoIR = (retorno) => alert(`${retorno}`);
+let exibeDescontoIR = (retorno) => alert(`${retorno}`); // Arrow
 
 
 function recebeValida(exibeRetorno) {
@@ -43,7 +43,7 @@ function recebeValida(exibeRetorno) {
     } else {
         retorno = (`Salario descontato: R$${salarioDescontado.toFixed(2)}\nDesconto: R$${taxaDesconto.toFixed(2)}`);
     }
-    exibeRetorno(retorno);
+    exibeRetorno(retorno); // O argumento da funcao passa o argumento da funcao chamada
 }
 
-recebeValida(exibeDescontoIR);
+recebeValida(exibeDescontoIR); // A primeira funcao passa a segunda como argumento, callback
