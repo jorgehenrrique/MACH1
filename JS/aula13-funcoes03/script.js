@@ -22,25 +22,21 @@ function recebeValida(exibeRetorno) {
         taxaDesconto = salarioMensal * taxaIr;
         taxaDesconto -= 142;
         salarioDescontado = salarioMensal - taxaDesconto;
-
     } else if (salarioMensal > 2826 && salarioMensal <= 3751) {
         taxaIr = 0.15;
         taxaDesconto = salarioMensal * taxaIr;
         taxaDesconto -= 354;
         salarioDescontado = salarioMensal - taxaDesconto;
-
     } else if (salarioMensal > 3751 && salarioMensal <= 4664) {
         taxaIr = 0.225;
         taxaDesconto = salarioMensal * taxaIr;
         taxaDesconto -= 636;
         salarioDescontado = salarioMensal - taxaDesconto;
-
     } else {
         taxaIr = 0.275;
         taxaDesconto = salarioMensal * taxaIr;
         taxaDesconto -= 869;
         salarioDescontado = salarioMensal - taxaDesconto;
-
     }
     if (salarioMensal <= 1903) {
         retorno = (`Isento\nSalario: R$${salarioMensal}`);
