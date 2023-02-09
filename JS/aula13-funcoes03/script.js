@@ -5,13 +5,12 @@
 ● Você deverá utilizar Arrow Function e Callback na sua solução.
 ● Fique atento nas regras do IR para atender os cenários propostos.
 ● A organização do seu código e a nomenclatura das variáveis/funções será avaliada.
-● Leiam e compreendam a regra de negócio para desconto de imposto de renda retido na fonte. */
+ */
 
 let exibeDescontoIR = (retorno) => alert(`${retorno}`);
 
 
 function recebeValida(exibeRetorno) {
-    // let salarioMensal = prompt('Informa seu salario mensal: ');
     let salarioMensal = prompt('Informe seu salário mensal: ');
     let taxaIr = 0;
     let taxaDesconto = 0;
