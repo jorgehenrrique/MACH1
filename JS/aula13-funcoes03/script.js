@@ -41,7 +41,7 @@ function recebeValida(exibeRetorno) {
     if (salarioMensal <= 1903) {
         retorno = (`Isento\nSalario: R$${salarioMensal}`);
     } else {
-        retorno = (`Salario descontato: R$${salarioDescontado.toFixed(2)}\nDesconto: R$${taxaDesconto.toFixed(2)}`);
+        retorno = (`Salario liquido: R$${salarioDescontado.toFixed(2)}\nDesconto: R$${taxaDesconto.toFixed(2)}`);
     }
     exibeRetorno(retorno); // O argumento da funcao passa o argumento da funcao chamada
 }
