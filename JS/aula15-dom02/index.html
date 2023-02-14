@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Exercicios DOM 02</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+            font-family: sans-serif;
+            background-color: #d1cece;
+        }
+        #titulo-principal {
+            color: #1a1aad;
+        }
+        .info h2{
+            color: #6c4f07;
+        }
+        p {
+            color: #1b83b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="titulo-principal">Aula de JS - Vamos brincar com quem tem o DOM!</h1>
+    </header>
+    <section>
+        <div class="info js">
+            <h2>O que é o JavaScript?</h2>
+            <p>JavaScript é uma linguagem de programação que permite a você implementar itens complexos em páginas web —
+                toda vez que uma página da web faz mais do que simplesmente mostrar a você informação estática —
+                mostrando conteúdo que se atualiza em um intervalo de tempo, mapas interativos ou gráficos 2D/3D
+                animados, etc. — você pode apostar que o JavaScript provavelmente está envolvido. É a terceira camada do
+                bolo das tecnologias padrões da web, duas das quais (HTML e CSS) nós falamos com muito mais detalhes em
+                outras partes da Área de Aprendizado.</p>
+        </div>
+    </section>
+    <section>
+        <div class="info dom">
+            <h2>O que é o DOM?</h2>
+            <p>
+                O DOM (Document Object Model) é a representação de dados dos objetos
+                que compõem a estrutura e o conteúdo de um documento na Web.
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="info nodeList">
+            <h2>NodeList</h2>
+            <p>
+                Objetos NodeList são coleções de nodos semelhantes aos objetos retornados pelos métodos Node.childNodes
+                e document.querySelectorAll().
+                Nota: Apesar de NodeList não ser um Array, é possível ser iterada usando o método forEach(). Muitos
+                navegadores antigos ainda não implementaram este método.
+                Em alguns casos, NodeList é uma coleção viva, ou seja, toda alteração feita no DOM reflete nos elementos
+                da coleção. Por exemplo, Node.childNodes é uma coleção viva:
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="info node">
+            <h2>Node</h2>
+            <p>Node é uma interface da qual diversos tipos do DOM herdam, e que permite que esses tipos sejam tratados
+                de forma similar, por exemplo, herdando os mesmos métodos ou sendo testados da mesma forma.</p>
+        </div>
+    </section>
+    <section>
+        <div class="info document">
+            <h2>Document</h2>
+            <p>Para cada página carregada no browser, existe um objeto Document. A interface Document serve como um
+                ponto de entrada para o conteúdo da Página ( a árvore DOM, incluindo elementos como
+
+                'body' e 'table') e provê funcionalidades globais ao documento (como obter a URL da página e criar novos elementos no documento).
+            </p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
