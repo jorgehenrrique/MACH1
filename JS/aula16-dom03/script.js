@@ -2,38 +2,42 @@ let inputNome = document.getElementById('nome');
 let inputSobrenome = document.getElementById('snome');
 let inputCpf = document.getElementById('cpf');
 
+let dadosCorretos = document.getElementById('dados-corretos');
+let dadosIncorretos = document.getElementById('dados-incorretos');
+
 let button = document.getElementById('btn');
 
-// a
-let cont = 0;
 button.onclick = function () {
-    // console.log(inputNome.value);
-    // console.log(inputSobrenome.value);
-    // console.log(inputCpf.value);
-    if (inputNome.value !== '' &&
-        inputSobrenome.value !== '' &&
-        inputCpf.value !== '') {
-        console.log('Todos campos estão preenchidos!');
-        cont++;
-    } else {
-        console.log('Erro, preencha todos os campos!');
-    }
 
-    // b
-    let cpf = inputCpf.value;
-    if (cpf.length == 11){
-        console.log('CPF Válido', cpf);
-        cont++;
-    } else {
-        console.log('CPF inválido');
-    }
-
-    // c
-
+    todosCamposOk();
 }
 
-let camposOk = (x) => {
-    let msg = (x === 2) ? 'Dados enviados com sucesso!' : 'Erro!';
-    console.log(msg);
+function validaCampos(nome, sobrenome, cpf) { // a
+    if (nome !== '' &&
+        sobrenome !== '' &&
+        cpf !== '') {
+        alert('Todos campos estão preenchidos!');
+        return true;
+    } else {
+        alert('Erro, preencha todos os campos!');
+    }
 }
-camposOk(cont);
+
+function verificaCpf(cpf) { // b
+    if (cpf.length == 11) {
+        alert('CPF Válido', cpf);
+        return true;
+    } else {
+        alert('CPF inválido');
+    }
+}
+
+let todosCamposOk = function () { // c
+    if (validaCampos(inputNome.value, inputSobrenome.value, inputCpf.value) && verificaCpf(inputCpf.value)) {
+        dadosIncorretos.setAttribute('hidden','true'); // adc hidden no incorreto
+        dadosCorretos.removeAttribute('hidden'); // remove o hidden do correto
+    } else {
+        dadosCorretos.setAttribute('hidden','true'); // adc hidden no correto
+        dadosIncorretos.removeAttribute('hidden'); // remove hidden do incorreto
+    }
+}

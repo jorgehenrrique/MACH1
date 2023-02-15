@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,15 @@
     <title>Exercicio aula 16</title>
 </head>
 <style>
-    body{
+    :root {
+        --border-radios: 10px;
+    }
+    body {
         font-family: sans-serif;
         font-size: large;
     }
-    .container{
+
+    .container {
         margin: 20px auto;
         background-color: #9bcdbd;
         display: flex;
@@ -19,28 +23,49 @@
         justify-content: center;
         align-items: center;
         width: 400px;
-        height: 500px;
+        height: fit-content;
         border-radius: 20px;
+        padding: 20px 0;
     }
-    form{
+    .mensagens-sim {
+        text-align: center;
+        margin: 10px 0;
+        padding: 0 5px;
+        border-radius: var(--border-radios);
+        background-color: green;
+    }
+    .mensagens-nao {
+        text-align: center;
+        margin: 10px 0;
+        padding: 0 5px;
+        border-radius: var(--border-radios);
+        background-color: red;
+    }
+    form {
         display: flex;
         flex-direction: column;
     }
-    input{
-        width: 200px;
+
+    input {
+        width: 250px;
         height: 35px;
         padding: 0 20px;
         margin-bottom: 15px;
-        border-radius: 8px;
+        border-radius: var(--border-radios);
         border: 1px solid;
+        font-size: 18px;
     }
-    button{
-        height: 30px;
-        border-radius: 8px;
-        border: 1px solid;
+
+    button {
+        height: 40px;
+        border-radius: var(--border-radios);
+        border: 1px solid black;
         color: white;
-        font-weight: 700;
+        font-weight: 800;
         background-color: red;
+    }
+    button:active{
+        background-color: #b70000;
     }
 </style>
 <body>
@@ -58,9 +83,15 @@
             <input type="number" id="cpf">
 
             <button id="btn">Validar</button>
+
+            <div id="dados-corretos" class="mensagens-sim" hidden>
+                <p>Dados enviados com sucesso!</p>
+            </div>
+            <div id="dados-incorretos" class="mensagens-nao" hidden>
+                <p>Erro!</p>
+            </div>
         </form>
     </div>
-    
 
     <script src="script.js"></script>
 </body>
