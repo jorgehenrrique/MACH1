@@ -13,58 +13,65 @@
     body {
         font-family: sans-serif;
         font-size: large;
+        background-color: rgb(85, 85, 85);
+        width: 100%;
+        height: 100%;
     }
-
     .container {
         margin: 20px auto;
-        background-color: #9bcdbd;
+        background-color: #eeefedc7;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 400px;
+        width: 350px;
         height: fit-content;
         border-radius: 20px;
         padding: 20px 0;
     }
     .mensagens-sim {
+        width: 100%;
         text-align: center;
         margin: 10px 0;
         padding: 0 5px;
         border-radius: var(--border-radios);
-        background-color: green;
+        background-color: #05e27b;
     }
     .mensagens-nao {
-        text-align: center;
-        margin: 10px 0;
-        padding: 0 5px;
-        border-radius: var(--border-radios);
-        background-color: red;
+        background-color: #e23535;
     }
     form {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 15px;
     }
-
+    label {
+        display: block;
+    }
     input {
-        width: 250px;
+        width: 100%;
         height: 35px;
         padding: 0 20px;
-        margin-bottom: 15px;
         border-radius: var(--border-radios);
-        border: 1px solid;
+        border: none;
         font-size: 18px;
+        outline: none;
+        margin-bottom: 20px;
     }
-
+    input:focus {
+        box-shadow: 0 0 10px 2px #0c0c4e;
+    }
     button {
-        height: 40px;
+        width: 100%;
+        height: 35px;
         border-radius: var(--border-radios);
-        border: 1px solid black;
+        border: none;
         color: white;
         font-weight: 800;
         background-color: red;
     }
-    button:active{
+    button:active {
         background-color: #b70000;
     }
 </style>
@@ -74,20 +81,20 @@
 
         <form action="#">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome">
+            <input type="text" id="nome" placeholder="Nome">
 
             <label for="snome">Sobrenome:</label>
-            <input type="text" id="snome">
+            <input type="text" id="snome" placeholder="Sobrenome">
 
             <label for="cpf">CPF:</label>
-            <input type="number" id="cpf">
+            <input type="number" id="cpf" placeholder="CPF">
 
             <button id="btn">Validar</button>
 
             <div id="dados-corretos" class="mensagens-sim" hidden>
                 <p>Dados enviados com sucesso!</p>
             </div>
-            <div id="dados-incorretos" class="mensagens-nao" hidden>
+            <div id="dados-incorretos" class="mensagens-sim mensagens-nao" hidden>
                 <p>Erro!</p>
             </div>
         </form>
