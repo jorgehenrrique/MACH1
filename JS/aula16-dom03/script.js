@@ -8,13 +8,13 @@ let dadosIncorretos = document.getElementById('dados-incorretos');
 let button = document.getElementById('btn');
 
 button.onclick = function () {
-    todosCamposOk();
+    camposOk();
 };
 
 function validaCampos(nome, sobrenome, cpf) { // a
-    if (nome !== '' &&
-        sobrenome !== '' &&
-        cpf !== '') {
+    if (nome !== ''
+        && sobrenome !== ''
+        && cpf !== '') {
         if (verificaCpf(inputCpf.value)) {
             alert('Todos os campos estão preenchidos!');
             alert('CPF Válido!');
@@ -22,7 +22,6 @@ function validaCampos(nome, sobrenome, cpf) { // a
         } else {
             alert('Complete o CPF!');
         }
-
     } else {
         alert('Erro, preencha todos os campos!');
     }
@@ -36,8 +35,9 @@ function verificaCpf(cpf) { // b
     }
 }
 
-let todosCamposOk = function () { // c
-    if (validaCampos(inputNome.value, inputSobrenome.value, inputCpf.value) && verificaCpf(inputCpf.value)) {
+let camposOk = function () { // c
+    if (validaCampos(inputNome.value, inputSobrenome.value, inputCpf.value)
+        && verificaCpf(inputCpf.value)) {
         dadosIncorretos.setAttribute('hidden', 'true'); // adc hidden no incorreto
         dadosCorretos.removeAttribute('hidden'); // remove o hidden do correto
     } else {
