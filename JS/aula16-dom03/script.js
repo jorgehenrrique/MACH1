@@ -38,10 +38,10 @@ function verificaCpf(cpf) { // b
 let camposOk = function () { // c
     if (validaCampos(inputNome.value.trim(), inputSobrenome.value.trim(), inputCpf.value.trim())
         && verificaCpf(inputCpf.value)) {
-        dadosIncorretos.setAttribute('hidden', 'true'); // adc hidden no incorreto
+        dadosIncorretos.setAttribute('hidden', 'hidden'); // adc hidden no incorreto
         dadosCorretos.removeAttribute('hidden'); // remove o hidden do correto
     } else {
-        dadosCorretos.setAttribute('hidden', 'true'); // adc hidden no correto
+        dadosCorretos.setAttribute('hidden', 'hidden'); // adc hidden no correto
         dadosIncorretos.removeAttribute('hidden'); // remove hidden do incorreto
     }
 }
