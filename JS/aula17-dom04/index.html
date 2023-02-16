@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+:root{
+    --border-radios: 10px;
+}
+body{
+    font-family: sans-serif;
+    background-color: #555;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    margin: 20px auto;
+    background-color: #eeefedc7;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 350px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+}
+input{
+    height: 35px;
+    padding: 0 20px;
+    border-radius: var(--border-radios);
+    border: none;
+    font-size: 18px;
+    outline: none;
+    margin-bottom: 20px;
+}
+input:focus{
+    box-shadow: 0 0 10px 2px #3aaa7c;
+}
+button{
+    width: 100%;
+    height: 35px;
+    border-radius: var(--border-radios);
+    border: none;
+    font-weight: 800;
+    background-color: #3aaa7c;
+}
+button:active{
+        background-color: #3aaa7b91;
+}
+.preenchidos{
+    width: 90%;
+}
+.erro{
+    display: none;
+    width: 90%;
+    text-align: center;
+    border-radius: var(--border-radios);
+    background-color: #f2c166c0;
+    color: red;
+    font-weight: bold;
+}
+p{
+    margin: 15px 0;
+    padding: 0;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Cadastro Simples</h1>
+
+        <p class="erro">Por favor, preencha todos os nomes</p>
+
+        <form action="#">
+            <label for="nome1">Nome01:</label>
+            <input type="text" id="nome1" placeholder="Nome01">
+
+            <label for="nome2">Nome02:</label>
+            <input type="text" id="nome2" placeholder="Nome02">
+
+            <label for="nome3">Nome03:</label>
+            <input type="text" id="nome3" placeholder="Nome03">
+
+            <button id="btn">Salvar</button>
+        </form>
+
+        <h2>NOMES PREENCHIDOS:</h2>
+        
+        <div class="preenchidos">
+            <p>Nome01: <span class="nome01"></span></p>
+            <p>Nome02: <span class="nome02"></span></p>
+            <p>Nome03: <span class="nome03"></span></p>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
