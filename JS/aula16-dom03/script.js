@@ -36,7 +36,7 @@ function verificaCpf(cpf) { // b
 }
 
 let camposOk = function () { // c
-    if (validaCampos(inputNome.value, inputSobrenome.value, inputCpf.value)
+    if (validaCampos(inputNome.value.trim(), inputSobrenome.value.trim(), inputCpf.value.trim())
         && verificaCpf(inputCpf.value)) {
         dadosIncorretos.setAttribute('hidden', 'true'); // adc hidden no incorreto
         dadosCorretos.removeAttribute('hidden'); // remove o hidden do correto
