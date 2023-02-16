@@ -17,11 +17,11 @@ const nomePreenche3 = document.querySelector('.nome03');
 
 const botao = document.querySelector('#btn');
 
-botao.onclick = function () {
+botao.onclick = function () { // Chama a primeira funcao ao ser clicado
     validaPreenchimento();
 };
 
-function validaPreenchimento() {
+function validaPreenchimento() { // Verifica campos preenchidos
     if (nome1.value.trim() !== ''
         && nome2.value.trim() !== ''
         && nome3.value.trim() !== '') {
@@ -32,7 +32,7 @@ function validaPreenchimento() {
     }
 }
 
-function preencheLista() {
+function preencheLista() { // Preenche a lista de nomes
     nomePreenche1.innerHTML = nome1.value;
     nomePreenche2.innerHTML = nome2.value;
     nomePreenche3.innerHTML = nome3.value;
