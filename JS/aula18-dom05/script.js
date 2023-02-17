@@ -76,11 +76,11 @@ function salvaCadastro() {
 function criaListaCadastrados() {
     div.innerHTML = '';
     let i = 1;
-    for (let dado of listaCadastro) {
+    for (let cliente of listaCadastro) {
         div.innerHTML += `<hr><ul>Cliente: ${i}
-        <li>${dado.nome}</li>
-        <li>${dado.email}</li>
-        <li>${dado.telefone}</li>
+        <li>${cliente.nome}</li>
+        <li>${cliente.email}</li>
+        <li>${cliente.telefone}</li>
         </ul>`;
         i++;
     }
