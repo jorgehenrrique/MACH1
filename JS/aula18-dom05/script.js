@@ -22,8 +22,11 @@ const cadastro = {
 let listaCadastro = [];
 
 btnConcluir.addEventListener('click', function () {
-    if (listaCadastro !== [0]) {
+    if (listaCadastro[0].nome) {
+        clientesCadastrados();
         exibeCadastrados();
+    } else {
+        // document.querySelector('.cadastro').removeAttribute('hidden');
     }
 });
 
@@ -35,9 +38,14 @@ function exibeCadastrados() {
 btnVoltar.addEventListener('click', function () {
     document.querySelector('.pagina-inicial').style.display = 'block';
     document.querySelector('.pagina-final').setAttribute('hidden', '');
+    limpaTela();
+});
+
+let limpaTela = function() {
     document.querySelector('.erro').setAttribute('hidden', '');
     document.querySelector('.sucesso').setAttribute('hidden', '');
-});
+    // document.querySelector('.cadastro').setAttribute('hidden', '');
+};
 
 function validaCadastro() {
     if (inputNome.value.trim() !== ''
@@ -46,13 +54,8 @@ function validaCadastro() {
         exibeMensagemSucesso();
         salvaCadastro();
         formulario.reset();
-        console.log(listaCadastro)
-        console.log(listaCadastro.nome)
     } else {
         exibeMensagemErro();
-        console.log(listaCadastro.nome)
-        console.log(listaCadastro)
-
     }
 }
 
@@ -74,17 +77,19 @@ function salvaCadastro() {
 
     listaCadastro.push(cadastroCriado);
 
-    clientesCadastrados();
+    console.log(listaCadastro)
+    console.log(listaCadastro[0])
+    console.log(listaCadastro[0].nome)
 }
 
 function clientesCadastrados() {
     div.innerHTML = '';
-    for (let cadastro of listaCadastro) {
-        let i = 1;
-        div.innerHTML += `<ul>Cadastro: ${i}
-        <li>${cadastro.nome}</li>
-        <li>${cadastro.email}</li>
-        <li>${cadastro.telefone}</li>
+    let i = 1;
+    for (let dado of listaCadastro) {
+        div.innerHTML += `<hr><ul>Cliente: ${i}
+        <li>${dado.nome}</li>
+        <li>${dado.email}</li>
+        <li>${dado.telefone}</li>
         </ul>`;
         i++;
     }

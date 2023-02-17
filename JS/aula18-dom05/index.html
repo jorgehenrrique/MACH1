@@ -78,9 +78,6 @@ button:active{
     color: red;
     font-weight: bold;
 }
-.none{
-    display: none;
-}
 .sucesso{
     background-color: var(--btn-salvar);
     color: #000;
@@ -88,6 +85,9 @@ button:active{
 p{
     /* margin: 1.5rem 0; */
     padding: .5rem 0;
+}
+hr{
+    border: 1px solid var(--btn-voltar);
 }
 </style>
 <body>
@@ -97,6 +97,7 @@ p{
 
             <p class="msg erro" hidden>Preencher todos os campos!</p>
             <p class="msg sucesso" hidden>Cadastro salvo!</p>
+            <!-- <p class="msg cadastro" hidden>Primeiro salve um cadastro!</p> -->
 
             <form action="#">
                 <label for="nome">Nome:</label>
