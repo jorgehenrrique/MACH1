@@ -78,9 +78,9 @@ function criaListaCadastrados() {
     let i = 1;
     for (let cliente of listaCadastro) {
         div.innerHTML += `<hr><ul>Cliente: ${i}
-        <li>${cliente.nome}</li>
-        <li>${cliente.email}</li>
-        <li>${cliente.telefone}</li>
+        <li>Nome: ${cliente.nome}</li>
+        <li>Email: ${cliente.email}</li>
+        <li>Telefone: ${cliente.telefone}</li>
         </ul>`;
         i++;
     }
