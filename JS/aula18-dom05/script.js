@@ -8,16 +8,16 @@ const btnSalvar = document.querySelector('.btn');
 const btnConcluir = document.querySelector('.btn-concluir');
 const btnVoltar = document.querySelector('.btn-voltar');
 
-const formulario = document.querySelector('form');
-const div = document.querySelector('.preenchidos');
+const formulario = document.querySelector('form'); // Formulario para reset()
+const div = document.querySelector('.preenchidos'); // div para listar clientes
 
 let listaCadastro = [];
 
 btnSalvar.addEventListener('click', validaCadastro);
 
 btnConcluir.addEventListener('click', function () {
-    if (listaCadastro[0].nome) {
-        clientesCadastrados();
+    if (listaCadastro[0].nome) { // Se já contem algum cliente salvo
+        criaListaCadastrados();
         exibeCadastrados();
     } else {
         // document.querySelector('.cadastro').removeAttribute('hidden');
@@ -73,7 +73,7 @@ function salvaCadastro() {
     listaCadastro.push(cadastro);
 }
 
-function clientesCadastrados() {
+function criaListaCadastrados() {
     div.innerHTML = '';
     let i = 1;
     for (let dado of listaCadastro) {
