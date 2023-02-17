@@ -27,7 +27,7 @@ body{
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 30rem;
+    width: 35rem;
     height: fit-content;
     border-radius: 2rem;
     padding: 2rem 0;
@@ -37,6 +37,7 @@ form{
     flex-flow: column;
 }
 input{
+    width: 30rem;
     height: 3.5rem;
     padding: 0 2rem;
     border-radius: var(--border-radios);
@@ -70,18 +71,23 @@ button:active{
 .preenchidos{
     width: 100%;
 }
-.erro{
-    display: none;
-    width: 90%;
-    text-align: center;
+.msg{
     border-radius: var(--border-radios);
+    text-align: center;
     background-color: #f2c166c0;
     color: red;
     font-weight: bold;
 }
+.none{
+    display: none;
+}
+.sucesso{
+    background-color: var(--btn-salvar);
+    color: #000;
+}
 p{
-    margin: 1.5rem 0;
-    padding: 1rem;
+    /* margin: 1.5rem 0; */
+    padding: .5rem 0;
 }
 </style>
 <body>
@@ -89,7 +95,8 @@ p{
         <div class="pagina-inicial" idden>
             <h1>Cadastro cliente</h1>
 
-            <p class="erro">Por favor, preencha todos os nomes</p>
+            <p class="msg erro" hidden>Preencher todos os campos!</p>
+            <p class="msg sucesso" hidden>Cadastro salvo!</p>
 
             <form action="#">
                 <label for="nome">Nome:</label>
@@ -105,7 +112,7 @@ p{
                 <button class="btn-concluir">Concluir</button>
             </form>
         </div>
-        <div class="pagina-final" idden>
+        <div class="pagina-final" hidden>
             <h2>Clientes cadastrados</h2>
             
             <div class="preenchidos">
