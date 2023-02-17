@@ -11,15 +11,9 @@ const btnVoltar = document.querySelector('.btn-voltar');
 const formulario = document.querySelector('form');
 const div = document.querySelector('.preenchidos');
 
-btnSalvar.addEventListener('click', validaCadastro);
-
-const cadastro = {
-    nome: '',
-    email: '',
-    telefone: '',
-};
-
 let listaCadastro = [];
+
+btnSalvar.addEventListener('click', validaCadastro);
 
 btnConcluir.addEventListener('click', function () {
     if (listaCadastro[0].nome) {
@@ -70,16 +64,13 @@ let exibeMensagemErro = () => {
 }
 
 function salvaCadastro() {
-    let cadastroCriado = { ...cadastro};
-    cadastroCriado.nome = inputNome.value;
-    cadastroCriado.email = inputEmail.value;
-    cadastroCriado.telefone = inputTel.value;
+    const cadastro = {
+        nome: inputNome.value,
+        email: inputEmail.value,
+        telefone: inputTel.value
+    };
 
-    listaCadastro.push(cadastroCriado);
-
-    console.log(listaCadastro)
-    console.log(listaCadastro[0])
-    console.log(listaCadastro[0].nome)
+    listaCadastro.push(cadastro);
 }
 
 function clientesCadastrados() {
