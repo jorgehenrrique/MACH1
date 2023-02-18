@@ -73,7 +73,7 @@ function salvaCadastro() { // Cria um objeto cadastro, e salva no array
     listaCadastro.push(cadastro); // Adc obj no array
 }
 
-function criaListaCadastrados() {
+function criaListaCadastrados() { // Cria lista de cadastro
     div.innerHTML = '';
     let i = 1;
     for (let cliente of listaCadastro) {
