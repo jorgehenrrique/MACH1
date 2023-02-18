@@ -63,14 +63,14 @@ let exibeMensagemErro = () => {
     document.querySelector('.sucesso').setAttribute('hidden', '');
 }
 
-function salvaCadastro() {
+function salvaCadastro() { // Cria um objeto cadastro, e salva no array
     const cadastro = {
         nome: inputNome.value,
         email: inputEmail.value,
         telefone: inputTel.value
     };
 
-    listaCadastro.push(cadastro);
+    listaCadastro.push(cadastro); // Adc obj no array
 }
 
 function criaListaCadastrados() {
