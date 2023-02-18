@@ -13,7 +13,7 @@ const div = document.querySelector('.preenchidos'); // div para listar clientes
 
 let listaCadastro = [];
 
-btnSalvar.addEventListener('click', validaCadastro);
+btnSalvar.addEventListener('click', validaCadastro); // Chama a funcao de validar
 
 btnConcluir.addEventListener('click', function () {
     if (listaCadastro[0].nome) { // Se já contem algum cliente salvo
@@ -35,7 +35,7 @@ btnVoltar.addEventListener('click', function () {
     limpaTela();
 });
 
-let limpaTela = function() {
+let limpaTela = function() { // Limpa mensagens ao voltar para inicio
     document.querySelector('.erro').setAttribute('hidden', '');
     document.querySelector('.sucesso').setAttribute('hidden', '');
     // document.querySelector('.cadastro').setAttribute('hidden', '');
