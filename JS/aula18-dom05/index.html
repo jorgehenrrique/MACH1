@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Exercicio aula 18 - dom05</title>
 </head>
 <style>
@@ -95,10 +100,13 @@ ul{
 li{
     font-weight: 400;
 }
+.animate__fadeIn{
+    animation-duration: 1s;
+}
 </style>
 <body>
     <div class="container">
-        <div class="pagina-inicial" idden>
+        <div class="pagina-inicial animate__fadeIn" idden>
             <h1>Cadastro cliente</h1>
 
             <p class="msg erro" hidden>Preencher todos os campos!</p>
@@ -119,7 +127,7 @@ li{
                 <button class="btn-concluir">Concluir</button>
             </form>
         </div>
-        <div class="pagina-final" hidden>
+        <div class="pagina-final animate__fadeIn" hidden>
             <h2>Clientes cadastrados</h2>
             
             <div class="preenchidos">
