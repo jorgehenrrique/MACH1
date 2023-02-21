@@ -15,6 +15,18 @@ let listaCadastro = [];
 
 btnSalvar.addEventListener('click', validaCadastro); // Chama a funcao de validar
 
+function validaCadastro() {
+    if (inputNome.value.trim() !== ''
+        && inputEmail.value.trim() !== ''
+        && inputTel.value.trim() !== '') {
+        exibeMensagemSucesso();
+        salvaCadastro();
+        formulario.reset();
+    } else {
+        exibeMensagemErro();
+    }
+}
+
 btnConcluir.addEventListener('click', function () {
     if (listaCadastro[0].nome) { // Se já contem algum cliente salvo
         criaListaCadastrados();
@@ -40,18 +52,6 @@ let limpaTela = function() { // Limpa mensagens ao voltar para inicio
     document.querySelector('.sucesso').setAttribute('hidden', '');
     // document.querySelector('.cadastro').setAttribute('hidden', '');
 };
-
-function validaCadastro() {
-    if (inputNome.value.trim() !== ''
-        && inputEmail.value.trim() !== ''
-        && inputTel.value.trim() !== '') {
-        exibeMensagemSucesso();
-        salvaCadastro();
-        formulario.reset();
-    } else {
-        exibeMensagemErro();
-    }
-}
 
 let exibeMensagemSucesso = () => {
     document.querySelector('.sucesso').removeAttribute('hidden');
