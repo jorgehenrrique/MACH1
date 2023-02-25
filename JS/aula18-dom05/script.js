@@ -28,11 +28,13 @@ function validaCadastro() {
 }
 
 btnConcluir.addEventListener('click', function () {
-    if (listaCadastro[0].nome) { // Se já contem algum cliente salvo
+    console.log(listaCadastro.length);
+    if (listaCadastro.length > 0) { // Se já contem algum cliente salvo
         criaListaCadastrados();
         exibeCadastrados();
     } else {
-        // document.querySelector('.cadastro').removeAttribute('hidden');
+        document.querySelector('.cadastro').removeAttribute('hidden');
+        document.querySelector('.erro').setAttribute('hidden', '');
     }
 });
 
@@ -47,27 +49,23 @@ btnVoltar.addEventListener('click', function () {
     limpaTela();
 });
 
-let limpaTela = function() { // Limpa mensagens ao voltar para inicio
-    document.querySelector('.erro').setAttribute('hidden', '');
-    document.querySelector('.sucesso').setAttribute('hidden', '');
-    // document.querySelector('.cadastro').setAttribute('hidden', '');
+let limpaTela = function () { // Limpa mensagens ao voltar para inicio
+    document.querySelector('.erro').setAttribute('hidden', '');//Preencher todos os campos!
+    document.querySelector('.sucesso').setAttribute('hidden', '');//Cadastro salvo!
+    document.querySelector('.cadastro').setAttribute('hidden', '');//Primeiro salve um cadastro!
 };
 
 let exibeMensagemSucesso = () => {
+    document.querySelector('.cadastro').setAttribute('hidden', '');
     document.querySelector('.erro').setAttribute('hidden', '');
     document.querySelector('.sucesso').removeAttribute('hidden');
-    limpaTelaInicio();
 }
 
 let exibeMensagemErro = () => {
+    document.querySelector('.cadastro').setAttribute('hidden', '');
     document.querySelector('.sucesso').setAttribute('hidden', '');
     document.querySelector('.erro').removeAttribute('hidden');
-    limpaTelaInicio();
 }
-
-const limpaTelaInicio = setTimeout(function() {
-    limpaTela();
-}, 4000);
 
 function salvaCadastro() { // Cria um objeto cadastro, e salva no array
     const cadastro = {
