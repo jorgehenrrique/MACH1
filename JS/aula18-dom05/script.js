@@ -54,13 +54,13 @@ let limpaTela = function() { // Limpa mensagens ao voltar para inicio
 };
 
 let exibeMensagemSucesso = () => {
-    document.querySelector('.sucesso').removeAttribute('hidden');
     document.querySelector('.erro').setAttribute('hidden', '');
+    document.querySelector('.sucesso').removeAttribute('hidden');
 }
 
 let exibeMensagemErro = () => {
-    document.querySelector('.erro').removeAttribute('hidden');
     document.querySelector('.sucesso').setAttribute('hidden', '');
+    document.querySelector('.erro').removeAttribute('hidden');
 }
 
 function salvaCadastro() { // Cria um objeto cadastro, e salva no array
