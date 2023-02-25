@@ -28,7 +28,6 @@ function validaCadastro() {
 }
 
 btnConcluir.addEventListener('click', function () {
-    console.log(listaCadastro.length);
     if (listaCadastro.length > 0) { // Se já contem algum cliente salvo
         criaListaCadastrados();
         exibeCadastrados();
@@ -50,9 +49,9 @@ btnVoltar.addEventListener('click', function () {
 });
 
 let limpaTela = function () { // Limpa mensagens ao voltar para inicio
-    document.querySelector('.erro').setAttribute('hidden', '');//Preencher todos os campos!
-    document.querySelector('.sucesso').setAttribute('hidden', '');//Cadastro salvo!
-    document.querySelector('.cadastro').setAttribute('hidden', '');//Primeiro salve um cadastro!
+    document.querySelector('.erro').setAttribute('hidden', ''); //Preencher todos os campos!
+    document.querySelector('.sucesso').setAttribute('hidden', ''); //Cadastro salvo!
+    document.querySelector('.cadastro').setAttribute('hidden', ''); //Primeiro salve um cadastro!
 };
 
 let exibeMensagemSucesso = () => {
