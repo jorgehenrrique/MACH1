@@ -56,12 +56,18 @@ let limpaTela = function() { // Limpa mensagens ao voltar para inicio
 let exibeMensagemSucesso = () => {
     document.querySelector('.erro').setAttribute('hidden', '');
     document.querySelector('.sucesso').removeAttribute('hidden');
+    limpaTelaInicio();
 }
 
 let exibeMensagemErro = () => {
     document.querySelector('.sucesso').setAttribute('hidden', '');
     document.querySelector('.erro').removeAttribute('hidden');
+    limpaTelaInicio();
 }
+
+const limpaTelaInicio = setTimeout(function() {
+    limpaTela();
+}, 4000);
 
 function salvaCadastro() { // Cria um objeto cadastro, e salva no array
     const cadastro = {
