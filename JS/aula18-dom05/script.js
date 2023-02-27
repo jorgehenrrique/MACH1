@@ -37,6 +37,10 @@ btnConcluir.addEventListener('click', function () {
     }
 });
 
+setInterval(function() {
+    limpaTela();
+}, 9000);
+
 function exibeCadastrados() {
     document.querySelector('.pagina-inicial').style.display = 'none';
     document.querySelector('.pagina-final').removeAttribute('hidden');
