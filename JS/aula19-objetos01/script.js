@@ -29,7 +29,7 @@ const listaUsuarios = [
     }
 ];
 
-resultado = document.querySelector('#resultado');
+const resultado = document.querySelector('#resultado');
 
 listaUsuarios.forEach(listarUsuario);
 
