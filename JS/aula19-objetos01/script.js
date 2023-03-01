@@ -1,3 +1,5 @@
+const resultado = document.querySelector('#resultado');
+
 const listaUsuarios = [
     {
         id: 1,
@@ -28,8 +30,6 @@ const listaUsuarios = [
         email: 'pedroivo@gtepmail.com'
     }
 ];
-
-const resultado = document.querySelector('#resultado');
 
 listaUsuarios.forEach(listarUsuario);
 
