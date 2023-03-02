@@ -19,12 +19,16 @@ function somaValores() {
 
     limpaTudo();
 
-    arrValores.map(valor => {
-        saidaValor.innerHTML += `${valor * 3}, `;
+    let newArr = arrValores.map(valor => {
+        return valor * 3;
     })
+
+    newArr.forEach((valor) => {
+        saidaValor.innerHTML += `${valor}, `;
+    });
 }
 
-btnLimpar.addEventListener('click', function () {
+btnLimpar.addEventListener('click', () => {
     arrValores = [];
     limpaTudo();
 })
