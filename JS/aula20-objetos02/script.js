@@ -24,7 +24,7 @@ function somaValores() {
     })
 }
 
-btnLimpar.addEventListener('click', function() {
+btnLimpar.addEventListener('click', function () {
     arrValores = [];
     limpaTudo();
 })
