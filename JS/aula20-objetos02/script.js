@@ -7,9 +7,8 @@ let arrValores = [];
 
 btnAdicionaCalcula.addEventListener('click', function () {
     if (inputValor.value.trim() !== '') {
-        // arrValores.push(Number(inputValor.value));
+        // arrValores.push(Number(inputValor.value)); // nao precisa converter para number
         arrValores.push(inputValor.value);
-        console.log(arrValores)
         somaValores();
     } else {
         alert('Preencher com numeros!')
@@ -18,8 +17,7 @@ btnAdicionaCalcula.addEventListener('click', function () {
 
 function somaValores() {
 
-    saidaValor.innerHTML = '';
-    inputValor.value = '';
+    limpaTudo();
 
     arrValores.map(valor => {
         saidaValor.innerHTML += `${valor * 3}, `;
@@ -28,7 +26,10 @@ function somaValores() {
 
 btnLimpar.addEventListener('click', function() {
     arrValores = [];
-    console.log(arrValores)
-    saidaValor.innerHTML = '';
-    inputValor.value = '';
+    limpaTudo();
 })
+
+let limpaTudo = () => {
+    inputValor.value = '';
+    saidaValor.innerHTML = '';
+};
