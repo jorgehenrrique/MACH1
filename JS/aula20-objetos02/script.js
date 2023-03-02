@@ -21,7 +21,7 @@ function somaValores() {
 
     let newArr = arrValores.map(valor => {
         return valor * 3;
-    })
+    });
 
     newArr.forEach((valor) => {
         saidaValor.innerHTML += `${valor}, `;
