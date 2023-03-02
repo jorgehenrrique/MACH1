@@ -32,4 +32,5 @@ btnLimpar.addEventListener('click', function() {
 let limpaTudo = () => {
     inputValor.value = '';
     saidaValor.innerHTML = '';
+    inputValor.focus();
 };
