@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 21, Trabalhando com Objetos 03 - prática</title>
+</head>
+<style>
+    body{
+        margin: 10px;
+    }
+    table{
+        width: 100%;
+        border-collapse: separate;
+    }
+    th, td{
+        padding: 8px 5px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    th{
+        background-color: black;
+        color: white;
+    }
+    tr:nth-child(2n){
+        background-color: #bebbbb;
+    }
+    div{
+        height: 35px;
+        display: flex;
+        gap: 6px;
+        border-radius: 8px;
+    }
+    input{
+        flex-grow: 10;
+        border-radius: 8px;
+        border: 1px solid #bebbbb;
+        padding: 4px 10px;
+        font-size: 20px;
+    }
+    button{
+        flex-grow: 1;
+        border-radius: 8px;
+        border: none;
+        font-weight: bold;
+        background-color: #4ba671;
+        color: #fff;
+    }
+    button:active{
+        background-color: #316948;
+    }
+</style>
+<body>
+    <div>
+        <input id="pesquisa" type="text" placeholder="Pesquisar">
+        <button id="pesquisar">Pesquisar</button>
+        <button id="limpar">Limpar</button>
+    </div>
+    <table class="rTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>Idade</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody id="resultado"></tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
