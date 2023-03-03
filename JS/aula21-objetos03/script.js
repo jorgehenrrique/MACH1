@@ -34,10 +34,10 @@ const listaUsuarios = [
     }
 ];
 
-function listarUsuariosPadrao() { // lista usuarios da lista acima
-listaUsuarios.forEach(listarUsuario);
+function listarUsuariosPadrao(lista) { // lista usuarios da lista acima
+    lista.forEach(listarUsuario);
 }
-listarUsuariosPadrao();
+listarUsuariosPadrao(listaUsuarios); // passa a lista padrao como argumento
 
 function listarUsuario(usuario) {
 
@@ -50,25 +50,33 @@ function listarUsuario(usuario) {
     </tr>`;
 }
 
-function consulta() {
+function consulta() { // filtra a consulta
+    let entrada = inputPesquisa.value.toLowerCase().trim();
+    
     let listaFiltrada = listaUsuarios.filter((usuario) => {
-        return usuario.id === Number(inputPesquisa.value)
+            
+        return usuario.id === Number(entrada) ||
+        usuario.nome.toLowerCase().includes(entrada) ||
+        usuario.sexo.toLowerCase() === entrada ||
+        usuario.email.toLowerCase().includes(entrada);
+
+        // .replace(' ', '')
     });
-    console.log(listaFiltrada);
+
     resultado.innerHTML = '';
-    listaFiltrada.forEach(listarUsuario);
+    listarUsuariosPadrao(listaFiltrada); // passa a lista filtrada como argumento e imprime
     return listaFiltrada;
 }
 
 pesquisar.addEventListener('click', () => {
     consulta();
-    if (inputPesquisa.value.length === 0) {
-        resultado.innerHTML = `<tr><td colspan="5">Nenhum nome encontrado</td></tr>`;
+    // || inputPesquisa.value.length === 0
+    if (consulta().length === 0) { // se a nova lista nao tem valores, exibe mensagem
+        resultado.innerHTML = `<tr><td colspan="5">Nenhum dado encontrado</td></tr>`;
     }
 })
 limpar.addEventListener('click', () => {
-    inputPesquisa.value = '';
-    resultado.innerHTML = '';
-    // listaUsuarios.forEach(listarUsuario);
-    listarUsuariosPadrao();
+    inputPesquisa.value = ''; // limpa input
+    resultado.innerHTML = ''; // limpa tabela
+    listarUsuariosPadrao(listaUsuarios); // chama funcao que exibe lista padrao apos limpar
 })
