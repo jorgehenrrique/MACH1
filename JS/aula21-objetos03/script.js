@@ -65,7 +65,7 @@ function consulta() { // funcao que aplica o filter
     return listaFiltrada;
 }
 
-pesquisar.addEventListener('click', () => {
+inputPesquisa.addEventListener('keyup', () => {
     consulta();
     // || inputPesquisa.value.length === 0
     if (consulta().length === 0) { // se a nova lista nao tem valores, exibe mensagem
