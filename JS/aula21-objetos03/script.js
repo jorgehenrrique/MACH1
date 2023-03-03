@@ -40,7 +40,6 @@ function listarUsuariosPadrao(lista) { // lista usuarios da lista acima
 listarUsuariosPadrao(listaUsuarios); // passa a lista padrao como argumento
 
 function listarUsuario(usuario) {
-
     resultado.innerHTML += `<tr>
         <td>${usuario.id}</td>
         <td>${usuario.nome}</td>
@@ -50,17 +49,15 @@ function listarUsuario(usuario) {
     </tr>`;
 }
 
-function consulta() { // filtra a consulta
-    let entrada = inputPesquisa.value.toLowerCase().trim();
-    
-    let listaFiltrada = listaUsuarios.filter((usuario) => {
-            
-        return usuario.id === Number(entrada) ||
-        usuario.nome.toLowerCase().includes(entrada) ||
-        usuario.sexo.toLowerCase() === entrada ||
-        usuario.email.toLowerCase().includes(entrada);
+function consulta() { // funcao que aplica o filter
+    let entrada = inputPesquisa.value.toLowerCase().trim(); // convertendo entrada para minusculo e removendo espacos
 
-        // .replace(' ', '')
+    let listaFiltrada = listaUsuarios.filter((usuario) => { // cria nova lista com valores aprovados na condicao
+
+        return usuario.id === Number(entrada) ||
+            usuario.nome.toLowerCase().includes(entrada) ||
+            usuario.sexo.toLowerCase() === entrada ||
+            usuario.email.toLowerCase().includes(entrada);
     });
 
     resultado.innerHTML = '';
@@ -74,9 +71,9 @@ pesquisar.addEventListener('click', () => {
     if (consulta().length === 0) { // se a nova lista nao tem valores, exibe mensagem
         resultado.innerHTML = `<tr><td colspan="5">Nenhum dado encontrado</td></tr>`;
     }
-})
+});
 limpar.addEventListener('click', () => {
     inputPesquisa.value = ''; // limpa input
     resultado.innerHTML = ''; // limpa tabela
     listarUsuariosPadrao(listaUsuarios); // chama funcao que exibe lista padrao apos limpar
-})
+});
