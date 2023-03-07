@@ -33,10 +33,7 @@ const shoppingCart = [
     }
 ];
 
-function listarProdutos(lista) { // lista usuarios da lista acima
-    lista.forEach(listarUsuario);
-}
-listarProdutos(shoppingCart); // passa a lista padrao como argumento
+shoppingCart.forEach(listarUsuario);
 
 function listarUsuario(produto) {
     resultado.innerHTML += `<tr>
@@ -48,9 +45,10 @@ function listarUsuario(produto) {
 }
 
 let totalCart = shoppingCart.reduce((total, item) => {
-    return total + item.price * item.qty;
+    return total + (item.price * item.qty); // Acumula o valor do item vezes a quantidade
 }, 0);
 
+// Exibe o total na tela
 ((total) => resultado.innerHTML += `<tr>
 <td colspan="3">Total:</td>
 <td>${total}</td>
