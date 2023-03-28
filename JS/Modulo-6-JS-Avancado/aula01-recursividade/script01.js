@@ -2,19 +2,18 @@
 
 const clientes = ['Jorge', 'Maria', 'Manoel', 'João', 'Roberto', 'Vera'];
 
-let minutos = 15
-function calcularTempoSaida(arr, cliente) {
+function calcularTempoSaida(arr, cliente, minutos = 15) {
     if (arr[arr.length - 1] == cliente) {
-        console.log(minutos);
         return minutos;
     } else {
-        arr.pop();
+        // arr.pop(); // atualizado para linha 12
         minutos += 15;
-        return (arr.length <= 0) ? console.log(null) : calcularTempoSaida(arr, cliente);
+        const arrCopy = arr.slice(0, arr.length - 1); // cria uma cópia do array original sem alterá-lo, e deixa o ultimo item de fora
+        return (arr.length <= 0) ? null : calcularTempoSaida(arrCopy, cliente, minutos);
     }
 }
 
-calcularTempoSaida(clientes, 'Vera') // Resultado (15)
-calcularTempoSaida(clientes, 'Manoel') // Resultado (60)
-calcularTempoSaida(clientes, 'Jorge') // Resultado (90)
-calcularTempoSaida(clientes, 'Jonas') // Resultado (null)
+console.log(calcularTempoSaida(clientes, 'Vera')); // Resultado (15)
+console.log(calcularTempoSaida(clientes, 'Manoel')); // Resultado (60)
+console.log(calcularTempoSaida(clientes, 'Jorge')); // Resultado (90)
+console.log(calcularTempoSaida(clientes, 'Jonas')); // Resultado (null)
