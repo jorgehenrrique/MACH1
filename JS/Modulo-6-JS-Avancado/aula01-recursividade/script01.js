@@ -2,13 +2,13 @@
 
 const clientes = ['Jorge', 'Maria', 'Manoel', 'João', 'Roberto', 'Vera'];
 
-let minutos = 15;
+let minutos = 15
 function calcularTempoSaida(arr, cliente) {
     if (arr[arr.length - 1] == cliente) {
         console.log(minutos);
         return minutos;
     } else {
-        arr.pop()
+        arr.pop();
         minutos += 15;
         return (arr.length <= 0) ? console.log('null') : calcularTempoSaida(arr, cliente);
     }
