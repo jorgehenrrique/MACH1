@@ -65,6 +65,7 @@ function funcaoRecursiva(nomeMenu, arr, caminho = []) {
 
 
 console.log(funcaoRecursiva('Menu 1', itens)); // Menu 1
+console.log(funcaoRecursiva('Menu 1.3.1', itens)); // Menu 1 > Menu 1.3 > Menu 1.3.1
 console.log(funcaoRecursiva('Menu 2.1.1.1.2', itens)); // Menu 2 > Menu 2.1 > Menu 2.1.1 > Menu 2.1.1.1 > Menu 2.1.1.1.2
 console.log(funcaoRecursiva('Menu 3.1', itens)); // null
 

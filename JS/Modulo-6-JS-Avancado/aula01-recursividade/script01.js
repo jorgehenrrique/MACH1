@@ -10,7 +10,7 @@ function calcularTempoSaida(arr, cliente) {
     } else {
         arr.pop();
         minutos += 15;
-        return (arr.length <= 0) ? console.log('null') : calcularTempoSaida(arr, cliente);
+        return (arr.length <= 0) ? console.log(null) : calcularTempoSaida(arr, cliente);
     }
 }
 
