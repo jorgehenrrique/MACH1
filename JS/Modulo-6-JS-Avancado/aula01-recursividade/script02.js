@@ -46,13 +46,11 @@ const itens = [
 
 function funcaoRecursiva(nomeMenu, arr, caminho = []) {
     for (const menu of arr) {
-        // console.log(menu.nome)
         caminho.push(menu.nome);
         if (menu.nome === nomeMenu) {
             return caminho.join(' > ');
         }
         if (menu.itens.length > 0) {
-            // console.log(menu.nome)
             const encontrado = funcaoRecursiva(nomeMenu, menu.itens, caminho);
             if (encontrado !== null) {
                 return encontrado;
