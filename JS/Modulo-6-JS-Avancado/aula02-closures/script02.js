@@ -3,7 +3,6 @@
 function criarContador(n) {
 
     function contador() {
-        // console.log(n)
         return n++;
     }
     return contador;
@@ -22,5 +21,3 @@ const novoContador = criarContador(6);
 
 console.log(novoContador());
 console.log(novoContador());
-// novoContador();
-// novoContador();
