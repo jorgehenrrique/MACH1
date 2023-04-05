@@ -6,29 +6,26 @@ class Aluno {
     email = '';
     telefone = '';
     avaliacoes = [];
-    #id = 0;
+    #id = iD();
     constructor(nome) {
         this.nome = nome;
-
-        const geraId = () => {
-            return () => this.#id++;
-        };
     }
-    geraId()
-    // contaId() {
-    //     console.log(this.#id)
-    //     return this.#id++;
-    // }
 
-    // get exibeId() {
-    //     console.log(this.#id);
-    // }
+    get imprimeExemplo() {
+        console.log(`#id: ${this.#id}, nome: ${this.nome}`);
+    }
 }
 
+const geraId = (n) => { // Funcao Closure
+    n = Number();
+    return () => n++;
+};
+const iD = geraId();
 
 const primeiroAluno = new Aluno('Primeiro Aluno');
-console.log(primeiroAluno.nome)
-// console.log(primeiroAluno.exibeId)
 const segundoAluno = new Aluno('Segundo Aluno');
-console.log(segundoAluno.nome)
-// console.log(segundoAluno.exibeId)
+const terceiroAluno = new Aluno('Terceiro Aluno');
+
+primeiroAluno.imprimeExemplo;
+segundoAluno.imprimeExemplo;
+terceiroAluno.imprimeExemplo;
