@@ -31,14 +31,12 @@ class Aluno {
     adicionarAvaliacao(avaliacao) {
         if (avaliacao instanceof Avaliacao) {
             this.#avaliacoes.push(avaliacao);
-            console.log(this.#avaliacoes); //
         } else {
             throw new Error('Avaliacao inválida!');
         }
     }
 
     obterMedia(media = 0) {
-        // let media = 0;
         for (let nota of this.#avaliacoes) {
             media += nota.nota;
         }
