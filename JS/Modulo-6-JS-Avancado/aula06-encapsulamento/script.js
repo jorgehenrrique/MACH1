@@ -48,8 +48,7 @@ class Aluno {
     }
 
     get aprovado() {
-        if (this.obterMedia() >= 7) return true;
-        if (this.obterMedia() < 7) return false;
+        return (this.obterMedia() >= 7);
     }
 }
 
