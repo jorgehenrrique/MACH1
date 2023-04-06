@@ -37,9 +37,12 @@ class Aluno {
     }
 
     obterMedia(media = 0) {
-        for (let nota of this.#avaliacoes) {
-            media += nota.nota;
-        }
+        // for (let nota of this.#avaliacoes) media += nota.nota;
+        // media = media / this.#avaliacoes.length;
+        // return media.toFixed(2);
+
+        // --- Alternativa em reduce ---
+        media = this.#avaliacoes.reduce((total, nota) => total + nota.nota, 0);
         media = media / this.#avaliacoes.length;
         return media.toFixed(2);
     }
