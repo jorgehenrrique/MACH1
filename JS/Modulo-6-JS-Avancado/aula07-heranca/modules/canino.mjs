@@ -1,6 +1,5 @@
 import Mamifero from "./mamifero.mjs";
 
-
 export default class Canino extends Mamifero {
     consegueUivar;
     constructor(nome, possuiCalda, late) {

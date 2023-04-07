@@ -1,6 +1,5 @@
 import Animal from "./animal.mjs";
 
-
 export default class Mamifero extends Animal {
     possuiPelo;
     velocidade;
