@@ -1,4 +1,4 @@
-class Product {
+export class Product {
     #id;
     constructor(id, name) {
         this.#id = id;
@@ -11,7 +11,6 @@ class Order {
     created = new Date();
     #products = [];
     constructor(created) {
-        // this.#id = id;
         this.created = created;
     }
 
@@ -24,17 +23,20 @@ class Order {
         }
     }
 
-    // calculateShipping()
+    calculateShipping() {
+        throw new Error('Metodo não implementado');
+    }
 }
 
 const produto1 = new Product(3, 'Coca');
 const produto2 = new Product(4, 'Cola');
 
-const ordem1 = new Order('4-10-2023');
-console.log(ordem1)
+const ordem1 = new Order('4-10-2023 17:40');
+// console.log(ordem1);
 
 ordem1.addProduct(produto1);
 ordem1.addProduct(produto2);
 
+// ordem1.calculateShipping(); // Retorno de erro
 
 export default Order;
