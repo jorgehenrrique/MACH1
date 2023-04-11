@@ -24,15 +24,12 @@ class OrderDelivery extends Order {
     }
 
     calculateShipping(zipCode) {
-        if (zipCode) {
-            const cod = parseInt(zipCode.toString().charAt(0));
-        }
+        if (zipCode) this.client.zipCode = zipCode;
+        
         const cod = parseInt(this.client.zipCode.toString().charAt(0));
         if (cod >= 0 && cod <= 4) {
-            console.log('5')
             return 5;
         } else if (cod >= 5 && cod <= 9) {
-            console.log('10')
             return 10;
         } else {
             throw new Error('Cep inválido');
@@ -47,7 +44,7 @@ console.log(ordemInterna1.calculateShipping());
 
 const cliente1 = new Client(22, 'Jorge', 33, true);
 const cliente2 = new Client(23, 'Joao', 55, true);
-const cliente3 = new Client(24, 'Maria', 77, false);
+const cliente3 = new Client(24, 'Maria', '', false);
 // console.log(cliente1);
 // console.log(cliente2);
 // console.log(cliente3);
@@ -58,8 +55,8 @@ const ordemExterna3 = new OrderDelivery('4-10-2023 21:30', cliente3);
 // console.log(ordemExterna1);
 // console.log(ordemExterna2);
 // console.log(ordemExterna3);
-ordemExterna1.calculateShipping();
-ordemExterna2.calculateShipping();
-ordemExterna3.calculateShipping(87);
+console.log(ordemExterna1.calculateShipping());
+console.log(ordemExterna2.calculateShipping());
+console.log(ordemExterna3.calculateShipping(87));
 
 export { OrderStore, OrderDelivery };
