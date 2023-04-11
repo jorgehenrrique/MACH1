@@ -1,13 +1,13 @@
-import Product from './modules/product.mjs'
-import Order from './modules//product.mjs'
 import { OrderStore, OrderDelivery } from './modules/order.mjs'
 import Client from './modules/client.mjs'
+import Order, { Product } from './modules/product.mjs'
 
-// const produto1 = new Product(3, 'Coca');
-// const produto2 = new Product(4, 'Cola');
 
-// const ordem1 = new Order('4-10-2023 17:40');
-// console.log(ordem1);
+const produto1 = new Product(3, 'Coca');
+const produto2 = new Product(4, 'Cola');
 
-// ordem1.addProduct(produto1);
-// ordem1.addProduct(produto2);
+const ordem1 = new Order('4-10-2023 17:40');
+console.log(ordem1);
+
+ordem1.addProduct(produto1);
+ordem1.addProduct(produto2);
