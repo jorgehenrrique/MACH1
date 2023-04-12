@@ -6,32 +6,34 @@ const printBairro = document.querySelector('#bairro');
 const printUf = document.querySelector('#uf');
 
 
+let buscaCep = new XMLHttpRequest();
 
 inputCep.addEventListener('blur', () => {
     let cep = inputCep.value;
-    let buscaCep = new XMLHttpRequest();
-
-    buscaCep.onreadystatechange = buscar(cep, buscaCep);
+    cep = cep.replace(/^(\d{5})(\d{3})$/, "$1-$2");
+    buscaCep.open('GET', `https://cdn.apicep.com/file/apicep/${cep}.json`, true);
+    buscaCep.onreadystatechange = () => buscar(buscaCep);
+    buscaCep.send(); // Enviando a request
 });
 
-function buscar(cep, buscaCep) {
-    console.log(buscaCep)
-    console.log(buscaCep.readyState)
-    // if (buscaCep.readyState === 1) { // status da requisição
+function buscar(buscaCep) {
+    if (buscaCep.readyState === 1) { // Status da requisição
         divLoading.style.display = 'block';
-    // }
-    console.log(buscaCep.readyState)////////
-    console.log(buscaCep.status)////////
-    if (buscaCep.readyState === 4) {
-        console.log('OK');
-        divLoading.style.display = 'none';
-        if (buscaCep.status === 200) { // Status Code
-            console.log('Sucesso OK');
-            divMessage.style.display = 'none';
-        } else {
-            divMessage.style.display = 'block';
-        }
     }
-    buscaCep.open('GET', `https://cdn.apicep.com/file/apicep/${cep}.json`);
-    buscaCep.send();
+    if (buscaCep.readyState === 4) {
+        divLoading.style.display = 'none';
+        tratamentoCep(buscaCep);
+    }
+    if (buscaCep.status === 200) { // Status Code
+        divMessage.style.display = 'none';
+    } else {
+        divMessage.style.display = 'block';
+    }
 }
+
+function tratamentoCep(cep) {
+    let retorno = JSON.parse(cep.responseText); // Converto para objeto JSON
+    printLogradouro.innerText = retorno.address;
+    printBairro.innerText = retorno.district;
+    printUf.innerHTML = retorno.state;
+} // CEP: 04538-133
