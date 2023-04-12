@@ -10,7 +10,9 @@ let buscaCep = new XMLHttpRequest();
 
 inputCep.addEventListener('blur', () => {
     let cep = inputCep.value;
-    cep = cep.replace(/^(\d{5})(\d{3})$/, "$1-$2");
+    // cep = cep.replace(/^(\d{5})(\d{3})$/, "$1-$2"); // Alternativa de uma linha
+    cep = cep.replace("-", ""); // Remove traços que já estejam no CEP
+    cep = cep.slice(0, 5) + "-" + cep.slice(5); // Adiciona um traço após os primeiros 5 dígitos
     buscaCep.open('GET', `https://cdn.apicep.com/file/apicep/${cep}.json`, true);
     buscaCep.onreadystatechange = () => buscar(buscaCep);
     buscaCep.send(); // Enviando a request
@@ -36,4 +38,4 @@ function tratamentoCep(cep) {
     printLogradouro.innerText = retorno.address;
     printBairro.innerText = retorno.district;
     printUf.innerHTML = retorno.state;
-} // CEP: 04538-133
+}
