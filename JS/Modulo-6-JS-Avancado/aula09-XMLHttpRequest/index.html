@@ -7,40 +7,67 @@
     <title>Atividade pratica 09 - XMLHttpRequest - Buscar CEP</title>
 </head>
 <style>
+    html{
+        font-family: sans-serif;
+        background-color: #555;
+    }
+    main{
+        margin: 20px auto;
+        background-color: #eeefedc7;
+        display: flex;
+        flex-flow: column;
+        align-items: stretch;
+        width: 550px;
+        height: fit-content;
+        border-radius: 20px;
+        padding: 20px 0;
+    }
     fieldset{
         height: 25px;
         border: none;
         border-bottom: solid 1px;
         margin-bottom: 10px;
+        padding: 10 20px;
     }
     input[name="cep"]{
-        width: 50%;
-        padding-left: 5px;
+        width: max-content;
+        padding: 0 20px;
         height: 25px;
+        display: inline;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
     }
     div{
         text-align: center;
         font-size: large;
         font-weight: bold;
     }
+    label{
+        font-weight: bold;
+    }
 </style>
 <body>
-    <fieldset>
-        <label for="cep">CEP:</label>
-        <input type="text" name="cep" id="cep" placeholder="CEP">
-    </fieldset>
-    <div id="loading" style="display: none;">Carregando...</div>
-    <div id="message" style="display: none;">CEP não encontrado</div>
+    <main>
+        <fieldset>
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" placeholder="CEP">
+        </fieldset>
+        <div id="loading" style="display: none;">Carregando...</div>
+        <div id="message" style="display: none;">CEP não encontrado</div>
 
-    <fieldset>Logradouro:
-        <label id="logradouro"></label>
-    </fieldset>
-    <fieldset>Bairro:
-        <label id="bairro"></label>
-    </fieldset>
-    <fieldset>UF:
-        <label id="uf"></label>
-    </fieldset>
+        <fieldset>Logradouro:
+            <label id="logradouro"></label>
+        </fieldset>
+        <fieldset>Bairro:
+            <label id="bairro"></label>
+        </fieldset>
+        <fieldset>UF:
+            <label id="uf"></label>
+        </fieldset>
+    </main>
+    
 
     <script src="main.js"></script>
 </body>
