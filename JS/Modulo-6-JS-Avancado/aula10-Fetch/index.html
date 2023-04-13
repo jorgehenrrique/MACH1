@@ -6,8 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade pratica 10 - Fetch</title>
 </head>
+<style>
+    .loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+    }
+    .loader::before,
+    .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #060505;
+        animation: prixClipFix 2s linear infinite;
+    }
+    .loader::after {
+        transform: rotate3d(90, 90, 0, 180deg);
+        border-color: #FF3D00;
+    }
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+    @keyframes prixClipFix {
+        0% {
+            clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+        }
+        50% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+        }
+        75%,
+        100% {
+            clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+        }
+    }
+    .loader {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+    }
+</style>
 <body>
-
-    <script src="main.js"></script>
+    <span class="loader loader-consulta" style="display: none;"></span>
+    <nav>
+        <ul>
+            <li>
+                <a href="cadastro.html">Cadastro Aluno</a>
+            </li>
+            <li>
+                <a href="index.html">Consulta de Aluno</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <form>
+            <h1>Busca por Matricula</h1>
+            <fieldset>
+                <label>Matricula</label>
+                <input name="matricula" id="matricula" />
+            </fieldset>
+            <fieldset>
+                Nome: <label id="matricula-aluno"></label>
+            </fieldset>
+            <fieldset>
+                Matricula: <label id="nome-aluno"></label>
+            </fieldset>
+            <input type="button" id="btnBuscarMatricula" value="Buscar por Matricula" />
+        </form>
+        <form>
+            <h1>Busca por Nome ou Todos</h1>
+            <fieldset id="pn-filter-nome" style="display:none">
+                <label>Nome</label>
+                <input name="nome" id="nome" />
+            </fieldset>
+            <div>
+                <fieldset>
+                    <label>Todos</label>
+                    <input type="radio" checked name="tipo-busca" id="opt-busca-todos" value="T" />
+                </fieldset>
+                <fieldset>
+                    <label>Por Nome</label>
+                    <input type="radio" name="tipo-busca" id="opt-busca-nome" value="N" />
+                </fieldset>
+            </div>
+            <input type="button" id="btnBuscar" value="Buscar" />
+        </form>
+        <div id="div-dados" style="display: none;">
+            <table>
+                <tbody id="dados">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
