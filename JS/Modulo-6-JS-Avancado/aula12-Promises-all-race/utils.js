@@ -20,7 +20,6 @@ export function ProcessarArquivos(arquivos) {
                     reject(new ArquivoProcessado(arquivo, time))
                 }
             }, time);
-
         })
     })
 }
