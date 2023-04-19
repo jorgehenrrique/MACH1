@@ -8,39 +8,40 @@ btnEnviar.onclick = verificaInput;
 function verificaInput() {
     let msg = inputMsg.value.trim();
     if (!msg.length <= 0) {
-        enviaMsg();
+        enviaMsg(msg);
     } else {
-        divPrint.innerText = 'Campo mensagem é obrigratório';
+        // divPrint.innerText = 'Campo mensagem é obrigratório';
+        alert('Campo mensagem é obrigratório');
         limpaMsg();
     }
 }
 
-function enviaMsg() {
+function enviaMsg(msg) {
     Promise.race(EnviarMensagemServers())
         .then((result) => {
-            msgEnviada();
+            msgEnviada(msg);
             // console.log(result)
         })
         .catch((err) => {
-            msgNaoEnviada();
+            msgNaoEnviada(msg);
             // console.warn(err)
         });
 }
 
-function msgEnviada() {
+function msgEnviada(msg) {
     divPrint.innerText = '';
     divPrint.style.color = 'green';
-    divPrint.innerText = 'Mensagem enviada com sucesso';
+    divPrint.innerText = `Mensagem: ${msg} - enviada com sucesso`;
     limpaMsg();
 }
 
-function msgNaoEnviada() {
+function msgNaoEnviada(msg) {
     divPrint.innerText = '';
     divPrint.style.color = 'red';
-    divPrint.innerText = 'Mensagem Não enviada';
+    divPrint.innerText = `Mensagem: ${msg} - não enviada`;
     limpaMsg();
 }
 
 function limpaMsg() {
-    setTimeout(() => divPrint.innerText = '', 4000);
+    setTimeout(() => divPrint.innerText = '', 8000);
 }
