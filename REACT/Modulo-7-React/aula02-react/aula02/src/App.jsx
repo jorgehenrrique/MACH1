@@ -41,19 +41,32 @@ function Movie3(props) {
 function Movie(props) {
   return (
     <div>
-      <h1>Filme 4</h1>
+      <h1>{props.movies.text}</h1>
       <ul>
-        <li>{props.movie.text}</li>
-        <li>{props.movie.title}</li>
-        <li>{props.movie.diretor}</li>
+        <li>{props.movies.title}</li>
+        <li>{props.movies.diretor}</li>
+        <li>{props.movies.ano}</li>
       </ul>
     </div>
   );
 }
-const movie = [{
-  text: '',
-  title: '',
-  diretor: ''
+const movies = [{
+  text: 'Alien vs. Predador',
+  title: 'Alien',
+  diretor: 'Davis',
+  ano: '2004'
+},
+{
+  text: 'Duna',
+  title: 'Ficção',
+  diretor: 'Denis',
+  ano: '2021'
+},
+{
+  text: 'A Monster Calls',
+  title: 'Calls',
+  diretor: 'Juan',
+  ano: '2016'
 }];
 
 function App() {
@@ -63,7 +76,9 @@ function App() {
       <Movie2 title='Duna' diretor='Denis Villeneuve' ano='2021' />
       <Movie3 title='A Monster Calls' diretor='Juan Antonio' ano='2016' />
 
-      <Movie movie={{ text: 'Um belo filme', title: 'O Dev', diretor: 'Jorge H.' }} />
+      {movies.map((movie) => (
+        <Movie movies={movie} />
+      ))}
     </div>
   )
 }
