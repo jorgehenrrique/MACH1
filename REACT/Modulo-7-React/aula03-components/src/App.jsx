@@ -3,18 +3,38 @@ import UserCard from './UserCard.jsx';
 import './App.css'
 
 function App(props) {
-  const user = {
+  const user = [{
     nome: 'Jorge',
     idade: 30,
     cidade: 'Ny',
     isPremium: true
-  }
+  },
+  {
+    nome: 'Henrique',
+    idade: 38,
+    cidade: 'RJ',
+    isPremium: false
+  },
+  {
+    nome: 'Jones',
+    idade: 34,
+    cidade: 'SP',
+    isPremium: true
+  },
+  {
+    nome: 'Roger',
+    idade: 22,
+    cidade: 'London',
+    isPremium: false
+  }];
 
   return (
     <>
-      <UserCard user={user} />
+      {user.map((userCard) => (
+        <UserCard user={userCard} />
+      ))}
     </>
   )
 }
 
-export default App
+export default App;

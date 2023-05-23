@@ -1,14 +1,17 @@
 .container {
   display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  min-height: 200px;
   border: 1px solid #00aa03;
   border-radius: 20px;
   padding: 30px;
   font-weight: bold;
-  font-size: 20px;
   color: #00aa03;
   background-color: #362503a1;
-  box-shadow: 0 0 60px 10px #00aa03;
+  box-shadow: 0 0 10px 2px #00aa03;
   text-align: justify;
+  margin-bottom: 20px;
 }
 .container ul {
   padding-left: 0;
@@ -17,9 +20,9 @@
   list-style: none;
 }
 .container ul li:hover {
-  box-shadow: 0 0 60px 10px #007aaa;
-  border-radius: 20px;
+  color: #007aaa;
 }
-.premium {
+.premium,
+section {
   color: #b9ca00;
 }
