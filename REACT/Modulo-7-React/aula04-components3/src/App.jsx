@@ -23,29 +23,26 @@ function TaskList() {
   ];
 
   function handleTaskComplete(title) {
-
+    { title.completed && console.log(title.title) }
   }
 
   return (
     <>
       {tasks.map((task, index) => (
-        // TaskItem(task, index)
-        <TaskItem task={task} index={index} />
+        <TaskItem task={task} key={index} func={handleTaskComplete(task)} />
       ))}
     </>
   )
 }
 
-function TaskItem(props, index) {
-  // console.log(props)
-  // console.log(props.index)
+function TaskItem(props) {
 
   function onTaskComplete(msg) {
     alert(msg)
   }
 
   return (
-    <div className='container' key={props.index}>
+    <div className='container'>
       <h3>{props.task.title}</h3>
       <span onClick={() => onTaskComplete(props.task.title)}>{props.task.completed ? 'concluído' : null}</span>
     </div>
