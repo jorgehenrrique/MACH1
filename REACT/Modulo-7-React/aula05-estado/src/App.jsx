@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ColorChanger from './assets/ColorChanger';
 import './App.css';
 
-function RemoveColorChanger() {
+function App() {
   const [remove, setRemove] = useState(false);
 
   const handleRemove = () => {
@@ -14,21 +14,12 @@ function RemoveColorChanger() {
     <div>
       {!remove && (
         <div>
+          <h1>Exercício de Mudança de Cor</h1>
           <ColorChanger />
         </div>
       )}
       <h4>{remove ? 'Adicionar' : 'Remover'} ColorChanger</h4>
       <button onClick={handleRemove}>{remove ? 'Adicionar' : 'Remover'}</button>
-    </div>
-  )
-}
-
-function App() {
-
-  return (
-    <div>
-      <h1>Exercício de Mudança de Cor</h1>
-      <RemoveColorChanger />
     </div>
   );
 
