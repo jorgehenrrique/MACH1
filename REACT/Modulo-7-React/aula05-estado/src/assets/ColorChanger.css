@@ -1,0 +1,8 @@
+.blue {
+  background-color: #0000ff70;
+  transition: all 400ms ease-in;
+}
+.red {
+  background-color: #ff000070;
+  transition: all 400ms ease-out;
+}
