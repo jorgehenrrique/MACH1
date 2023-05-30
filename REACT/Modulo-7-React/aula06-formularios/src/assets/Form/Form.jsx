@@ -32,7 +32,6 @@ export default function Form() {
       alert("Aceite os termos de uso!");
       return;
     }
-    console.log("Formulário enviado com sucesso!");
     setEnviado(true);
   }
 
@@ -63,7 +62,6 @@ export default function Form() {
         <button type="submit">Enviar</button>
       </form>
     </>
-
   );
 }
 
