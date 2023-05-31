@@ -1,15 +1,4 @@
 import './Breadcrumb.css';
-
-// export default function Breadcrumb() {
-//   const data = useLocation();
-
-//   return (
-//     <div className="caminho">
-//       {data.pathname}
-//     </div>
-//   );
-// }
-
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
