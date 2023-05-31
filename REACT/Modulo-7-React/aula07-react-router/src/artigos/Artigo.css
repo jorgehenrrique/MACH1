@@ -31,3 +31,12 @@
   max-width: 300px;
   align-self: justify;
 }
+.cart-container {
+  width: 800px;
+}
+.cart-container img {
+  align-self: auto;
+}
+.cart-container p {
+  max-width: 100%;
+}
