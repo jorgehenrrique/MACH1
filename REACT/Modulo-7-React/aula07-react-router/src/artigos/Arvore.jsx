@@ -5,7 +5,10 @@ export default function Arvore(props) {
 
   return (
     <div>
-      <Breadcrumb />
+      <div className='top'>
+        <Breadcrumb />
+      </div>
+
       <div className="card cart-container">
         <img src={listaArtigos[1].img} />
         <small>{listaArtigos[1].tipo}</small>

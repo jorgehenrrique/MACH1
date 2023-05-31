@@ -11,8 +11,11 @@ export default function ArtigoPreview(props) {
 
   return (
     <div>
-      <h2>Página de Artigos</h2>
-      <Breadcrumb />
+      <div className='top'>
+        <h2>Página de Artigos</h2>
+        <Breadcrumb />
+      </div>
+
       {listaArtigos.map((artigo, index) => (
         <div className="card" key={index}>
           <img src={artigo.img} />

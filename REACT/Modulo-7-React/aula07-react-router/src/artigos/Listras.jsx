@@ -5,7 +5,10 @@ export default function Listras(props) {
 
   return (
     <div>
-      <Breadcrumb />
+      <div className='top'>
+        <Breadcrumb />
+      </div>
+
       <div className="card cart-container">
         <img src={listaArtigos[0].img} />
         <small>{listaArtigos[0].tipo}</small>

@@ -5,7 +5,10 @@ export default function Animais(props) {
 
   return (
     <div>
-      <Breadcrumb />
+      <div className='top'>
+        <Breadcrumb />
+      </div>
+
       <div className="card cart-container">
         <img src={listaArtigos[2].img} />
         <small>{listaArtigos[2].tipo}</small>
