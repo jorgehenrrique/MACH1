@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 8px;
+  width: fit-content;
+  text-align: justify;
+  justify-content: space-between;
+}
+.card img {
+  width: 200px;
+  align-self: center;
+  border: 1px solid #ccc;
+  padding: 5px 60px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.card i {
+  align-self: flex-end;
+  cursor: pointer;
+  color: #305eda;
+}
+.card p {
+  word-wrap: break-word;
+  max-width: 300px;
+  align-self: justify;
+}
