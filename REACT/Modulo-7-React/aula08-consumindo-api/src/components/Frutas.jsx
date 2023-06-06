@@ -5,8 +5,8 @@ export default function Frutas() {
   const parans = useParams(); // pega o parametro, link, /:id
   const { id } = parans;
 
-  const location = useLocation(); // Pega o obj enviado no state do NavLink
-  const fruta = location.state;
+  const location = useLocation();
+  const fruta = location.state; // Pega o obj enviado no state do NavLink
 
   function handleClick() {
     navigate('/'); // voltar ao /home
