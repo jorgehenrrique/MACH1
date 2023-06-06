@@ -21,6 +21,5 @@ export default function Frutas() {
 
       <button onClick={handleClick}>Voltar</button>
     </>
-
   );
 }
