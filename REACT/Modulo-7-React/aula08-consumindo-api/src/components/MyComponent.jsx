@@ -25,7 +25,6 @@ export default function MyComponent() {
 
     // Será executada ao desmontar o componente
     return () => {
-      console.log('Finalizado');
       setData(null); // Limpa a lista
       setErro(null); // Limpa o erro
     };
