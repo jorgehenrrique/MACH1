@@ -20,7 +20,6 @@ export default function MyComponent() {
         setErro('Erro ao buscar os dados'); // Passando erro para var de estado erro
       }
     };
-
     fetchData();
 
     // Será executada ao desmontar o componente
