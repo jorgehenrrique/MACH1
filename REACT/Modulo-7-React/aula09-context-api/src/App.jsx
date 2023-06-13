@@ -6,7 +6,7 @@ import Button from './Components/UpdateBtn';
 
 function App() {
   const [produto, setProduto] = useState({
-    nome: '-',
+    nome: '',
     preco: 0,
     descricao: 'sem descricao'
   });
