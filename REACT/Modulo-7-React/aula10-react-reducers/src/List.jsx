@@ -1,7 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-export const initialStateProdutos = [
-  // { id: 0, produto: 'Produto' },
-];
+export const initialStateProdutos = [];
 
 // O state, assume o lugar da initialStateProdutos
 // action é o parametro enviado pelo dispatch {type: ''...}
