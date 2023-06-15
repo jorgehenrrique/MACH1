@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import './App.css';
 import Context from './Context';
 import ProductList, { initialStateProdutos } from './List';
-import ExibeLista from '../ProductList';
+import ExibeLista from './ProductList';
 
 function App() {
   const [state, dispatch] = useReducer(ProductList, initialStateProdutos)

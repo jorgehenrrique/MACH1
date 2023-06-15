@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import Context from './src/Context';
+import Context from './Context';
 
 export default function ExibeLista() {
   const { state, dispatch } = useContext(Context);
