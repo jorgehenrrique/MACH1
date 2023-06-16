@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 export const initialStateProdutos = [];
 
 // O state, assume o lugar da initialStateProdutos
