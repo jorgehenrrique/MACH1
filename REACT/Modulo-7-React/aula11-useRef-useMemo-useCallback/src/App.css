@@ -1,0 +1,38 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.container {
+  border: 1px solid #333333;
+  border-radius: 20px;
+  padding: 1rem;
+  min-width: 45rem;
+  background-color: #ff7979a5;
+  overflow: auto;
+}
+.container input {
+  height: 25px;
+  width: 200px;
+  font-size: 18px;
+  padding: 4px 10px;
+  outline: none;
+}
+.container label {
+  margin: 0 20px;
+}
+
+.container button {
+  background-color: #333;
+  color: #fff;
+  font-size: 22px;
+  padding: 6px 16px;
+  margin: 0 10px;
+}
+li,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
