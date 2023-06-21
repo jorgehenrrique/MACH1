@@ -5,11 +5,11 @@
   text-align: center;
 }
 .container {
-  border: 1px solid #fff;
+  border: 1px solid #333333;
   border-radius: 20px;
   padding: 1rem;
   min-width: 45rem;
-  background-color: #333;
+  background-color: #ff7979a5;
   overflow: auto;
 }
 .container input {
@@ -21,4 +21,11 @@
 }
 .container label {
   margin: 0 20px;
+}
+
+.container button {
+  background-color: #333;
+  color: #fff;
+  font-size: 22px;
+  padding: 6px 16px;
 }

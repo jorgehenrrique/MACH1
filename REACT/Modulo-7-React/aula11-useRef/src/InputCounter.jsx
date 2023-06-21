@@ -13,6 +13,7 @@ export default function InputCounter() {
     <>
       <div className="container">
         <h2>Aplicando useRef</h2>
+
         <input ref={caracteres} type="text" onChange={handleChange} />
         <label>Caracteres: {count}</label>
       </div>
