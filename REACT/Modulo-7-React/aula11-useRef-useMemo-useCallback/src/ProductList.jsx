@@ -11,15 +11,11 @@ export default function ProductList() {
   };
 
   const products = useMemo(() => {
-    return (
-      <ul>
-        {productList.map((product, idx) => {
-          return (
-            <li key={idx}>{product}</li>
-          );
-        })}
-      </ul>
-    );
+    return productList.map((product, idx) => {
+      return (
+        <li key={idx}>{product}</li>
+      )
+    })
   }, [productList]);
 
   return (
@@ -29,7 +25,9 @@ export default function ProductList() {
         <button onClick={addProduct}>Adicionar Produto</button>
         <button onClick={rmvProduct}>Remover Último Produto</button>
 
-        {products}
+        <ul>
+          {products}
+        </ul>
       </div>
     </>
   );
