@@ -11,12 +11,13 @@ function App() {
       <div className="container">
         <h3>useCounter</h3>
 
-        <button onClick={increment}>+</button>
         <button onClick={decrement}>-</button>
+        <button onClick={increment}>+</button>
         <label>Counter: {count}</label>
       </div>
 
       <div className={`container ${toggle ? 'azul' : 'vermelho'}`}>
+        <h3>useToggle</h3>
         <button onClick={alternateToggle}>Azul/Vermelho</button>
       </div>
     </>
