@@ -6,6 +6,8 @@ import path from 'path'; // Importe a biblioteca path para montar caminho absolu
 
 const app = express();
 const port = 3333; // Porta do server
+// Use path.resolve para obter o caminho absoluto do arquivo
+const dataPath = path.resolve(__dirname, 'data', 'data.json');
 
 // Utilize express.json() para fazer o parse do corpo da requisição.
 app.use(express.json());
@@ -65,8 +67,6 @@ app.post('/add', (req, res) => {
 // Função para ler o conteúdo do arquivo data.json
 function lerArquivo(): User[] {
   try {
-    // Use path.resolve para obter o caminho absoluto do arquivo
-    const dataPath = path.resolve(__dirname, 'data', 'data.json');
     const conteudo: string = fs.readFileSync(dataPath, 'utf-8');
     return JSON.parse(conteudo);
   } catch (erro) {
@@ -78,7 +78,6 @@ function lerArquivo(): User[] {
 // Função para escrever o conteúdo atualizado no arquivo data.json
 function escreverArquivo(conteudo: User[]): void {
   try {
-    const dataPath = path.resolve(__dirname, 'data', 'data.json');
     fs.writeFileSync(dataPath, JSON.stringify(conteudo, null, 2));
     console.log('Arquivo data.json atualizado com sucesso!');
   } catch (erro) {
