@@ -9,16 +9,5 @@
       "credit": 44000,
       "business": true
     }
-  },
-  {
-    "id": "927674a2-58a6-49b9-a283-2090e526e742",
-    "name": "Rei",
-    "age": 30,
-    "email": "teste@email",
-    "profile": {
-      "type": "server",
-      "credit": 44000,
-      "business": true
-    }
   }
 ]

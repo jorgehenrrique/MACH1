@@ -29,7 +29,6 @@ app.get('/list', (req, res) => {
     console.log('Página de usuarios');
     // Lendo, listando o arquivo data.json
     const dados = lerArquivo();
-    console.log(dados);
     if (dados.length > 0) {
         res.json(dados); // imprime dados
     }
