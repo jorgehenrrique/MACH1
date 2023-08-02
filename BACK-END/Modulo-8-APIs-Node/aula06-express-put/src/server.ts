@@ -28,8 +28,7 @@ app.get('/', (req, res) => {
 app.get('/product', (req, res) => {
   console.log('Produtos listados');
 
-  // Lendo, listando o arquivo data.json
-  const dados: Product[] = lerArquivo();
+  const dados: Product[] = lerArquivo(); // Lendo o arquivo data.json
 
   if (dados.length > 0) {
     res.json(dados); // retorna dados
@@ -40,13 +39,13 @@ app.get('/product', (req, res) => {
 
 // Listar dado por id/url parameters
 app.get('/product/:id', (req, res) => {
-  const dados: Product[] = lerArquivo(); // Lendo arquivo data.json
+  const dados: Product[] = lerArquivo();
 
-  const currentUser = dados.find((user) => user.id === req.params.id);
+  const currentData = dados.find((prod) => prod.id === req.params.id);
 
-  if (currentUser) {
+  if (currentData) {
     console.log(`Produto do id listado: ${req.params.id}`);
-    res.json(currentUser);
+    res.json(currentData);
   } else {
     res.status(404).send(`Não ha dados para o id: ${req.params.id}`);
   }
@@ -68,6 +67,9 @@ app.post('/product/add', (req, res) => {
   }
 
   checkData(res, req.body);
+  if (checkData(res, req.body)) {
+    return;
+  }
 
   const newProduct: Product = {
     id: uuidv4(),
@@ -88,7 +90,7 @@ app.post('/product/add', (req, res) => {
 
 // Editar dados
 app.put('/product/edit/:id', (req, res) => {
-  let dados: Product[] = lerArquivo(); // ler os dados salvos
+  let dados: Product[] = lerArquivo();
 
   const dataIndex = dados.findIndex((prod) => prod.id === req.params.id);
 
@@ -103,6 +105,9 @@ app.put('/product/edit/:id', (req, res) => {
   } = req.body;
 
   checkData(res, req.body);
+  if (checkData(res, req.body)) {
+    return;
+  }
 
   if (dataIndex !== -1) {
     const payload: Product = {
@@ -123,4 +128,23 @@ app.put('/product/edit/:id', (req, res) => {
   } else {
     res.status(404).send('Dado não encontrado');
   }
+});
+
+// Deletar dado
+app.delete('/product/:id', (req, res) => {
+  let dados: Product[] = lerArquivo();
+
+  const currentData = dados.find((user) => user.id === req.params.id);
+
+  if (currentData) {
+    console.log(`Produto do id deletado: ${req.params.id}`);
+    // res.json(currentData);
+  } else {
+    res.status(404).send(`Não ha dados com o id: ${req.params.id}`);
+  }
+
+  // Deleta aqui, retornando apenas os ids diferentes do recebido
+  dados = dados.filter((prod) => prod.id !== req.params.id);
+  escreverArquivo(dados);
+  res.status(200).send('Deletado com sucesso');
 });

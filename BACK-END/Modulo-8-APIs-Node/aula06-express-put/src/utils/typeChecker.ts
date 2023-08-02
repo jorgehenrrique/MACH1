@@ -1,24 +1,12 @@
 import Product from '../types/types';
 
 export default function checkData(res: any, data: Product) {
-  if (typeof data.productName !== 'string') {
-    return res
-      .status(400)
-      .send(
-        `${data.productName} inválido! O dado esperado em productName é um texto.`
-      );
-  } else if (typeof data.productDescription !== 'string') {
-    return res
-      .status(400)
-      .send(
-        `${data.productDescription} inválido! O dado esperado em productDescription é um texto.`
-      );
-  } else if (typeof data.productCategory !== 'string') {
-    return res
-      .status(400)
-      .send(
-        `${data.productCategory} inválido! O dado esperado em productCategory é um texto.`
-      );
+  if (
+    typeof data.productName !== 'string' ||
+    typeof data.productDescription !== 'string' ||
+    typeof data.productCategory !== 'string'
+  ) {
+    return res.status(400).send(`inválido! O dado esperado é um texto.`);
   } else if (typeof data.productCost !== 'number') {
     return res
       .status(400)
