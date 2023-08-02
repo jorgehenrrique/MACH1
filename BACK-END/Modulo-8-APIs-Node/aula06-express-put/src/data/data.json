@@ -1,0 +1,43 @@
+[
+  {
+    "id": "f22f8b8a-c04a-464f-b470-71228a015ffc",
+    "productName": "Produto01",
+    "productDescription": "Um produto qualquer",
+    "productCategory": "Pro",
+    "productCost": 12.3,
+    "productTags": [
+      "primeiro",
+      "produto1"
+    ],
+    "productRelated": [
+      321,
+      123
+    ]
+  },
+  {
+    "id": "3051e255-ea2c-4e65-8a86-b04d567bd9a5",
+    "productName": "Produto02",
+    "productDescription": "Outro qualquer",
+    "productCategory": "Product",
+    "productCost": 24,
+    "productTags": [
+      "outro"
+    ],
+    "productRelated": [
+      333
+    ]
+  },
+  {
+    "id": "747580d2-0843-4a20-94b1-1416388f6719",
+    "productName": "Produto02",
+    "productDescription": "Outro qualquer etc",
+    "productCategory": "Products",
+    "productCost": 24,
+    "productTags": [
+      "outro"
+    ],
+    "productRelated": [
+      333
+    ]
+  }
+]
