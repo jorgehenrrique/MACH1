@@ -26,6 +26,6 @@ export default function auth(req: any, res: any, next: any) {
     }
   } catch (error: any) {
     console.log(error.message);
-    return res.status(401).send('Usuario não autoriado.');
+    return res.status(401).send('Usuario não autorizado.');
   }
 }
