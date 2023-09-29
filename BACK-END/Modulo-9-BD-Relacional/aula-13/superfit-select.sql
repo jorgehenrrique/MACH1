@@ -44,3 +44,36 @@
 */
 
   -- 2 - Segunda questão:
+
+SELECT
+	ha.hora_inicio, ha.hora_fim, mo.nome modalidade, pe.nome instrutor
+FROM
+	horario_aulas ha
+INNER JOIN
+	modalidades mo
+ON ha.modalidade_id = mo.id
+INNER JOIN
+	pessoas pe
+ON ha.instrutor_id = pe.id
+WHERE
+	pe.ativo = 'S'
+ORDER BY
+	ha.hora_inicio ASC;
+
+
+-- SELECT
+  -- seleciona as colunas, e atribui apelido as duas ultimas
+-- FROM
+  -- seleciona a primeira tabela e atribui apelido
+-- INNER JOIN
+  -- seleciona outra tabela e atribui apelido
+-- ON, adiciona condição, se a coluna modalidade_id
+  -- da tabela horario_aulas, seja igual a coluna id, da tabela modalidade_id.
+-- INNER JOIN
+  -- seleciona a terceira tabela e atribui apelido
+-- ON, adiciona condição, se a coluna instrutor_id da tabela horario_aulas
+  -- seja igual a coluna id, da tabela pessoas.
+-- WHERE aplica a condição na coluna ativo, da tabela pessoas, onde devem ser = 'S'.
+-- ORDER BY ordena os resultados
+-- ASC determina a ordem em crescente, usando como base a coluna hora_inicio, 
+  -- da tabela horario_aulas.
