@@ -9,6 +9,7 @@ const {
   modalidadesListId,
   modalidadesAdd,
 } = require('./controllers/handleModalidades');
+const { planosList } = require('./controllers/handlePlanos');
 const app = express();
 const port = 3000;
 
@@ -44,6 +45,9 @@ app.get('/modalidades/:id', modalidadesListId);
 app.post('/modalidades', modalidadesAdd);
 
 // ----------------------------------------------------------------
+
+// GET: http://localhost:3000/planos
+app.get('/planos', planosList);
 
 // ----------------------------------------------------------------
 
