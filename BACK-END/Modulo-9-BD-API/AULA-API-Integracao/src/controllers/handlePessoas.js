@@ -21,10 +21,10 @@ async function pessoasList(req, res) {
 
 // Lista pessoa por id
 async function pessoasListId(req, res) {
-  const { id } = req.params;
-
   const db = createDBClient();
   await db.connect();
+
+  const { id } = req.params;
 
   try {
     const result = await db.query('SELECT * FROM pessoas WHERE id=$1', [id]);
@@ -42,10 +42,10 @@ async function pessoasListId(req, res) {
 
 // Adiciona pessoas
 async function pessoasAdd(req, res) {
-  const { nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo } = req.body;
-
   const db = createDBClient();
   await db.connect();
+
+  const { nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo } = req.body;
 
   try {
     const query = `INSERT INTO pessoas (nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo)

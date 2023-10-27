@@ -19,10 +19,10 @@ async function modalidadesList(req, res) {
 }
 
 async function modalidadesListId(req, res) {
-  const { id } = req.params;
-
   const db = createDBClient();
   await db.connect();
+
+  const { id } = req.params;
 
   try {
     const result = await db.query('SELECT * FROM modalidades WHERE id=$1', [
@@ -40,4 +40,26 @@ async function modalidadesListId(req, res) {
   }
 }
 
-module.exports = { modalidadesList, modalidadesListId };
+async function modalidadesAdd(req, res) {
+  const db = createDBClient();
+  await db.connect();
+
+  const { nome } = req.body;
+
+  try {
+    const query = `INSERT INTO modalidades (nome)
+          VALUES ($1) Returning *;`;
+    const values = [nome];
+    const result = await db.query(query, values);
+    res.json(result.rows[0]);
+  } catch (error) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
+
+module.exports = { modalidadesList, modalidadesListId, modalidadesAdd };
