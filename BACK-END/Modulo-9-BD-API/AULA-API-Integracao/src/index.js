@@ -13,8 +13,10 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+
+// Inicia o sevidor
 app.listen(port, () => {
-  console.log('Server rodando port: ' + port);
+  console.log('Server ok port: ' + port);
 });
 
 // CRUD - CREATE READ UPDATE DELETE
@@ -42,3 +44,10 @@ app.get('/modalidades/:id', modalidadesListId);
 app.post('/modalidades', modalidadesAdd);
 
 // ----------------------------------------------------------------
+
+// ----------------------------------------------------------------
+
+// Resposta padrão para quaisquer outras requisições:
+app.use((req, res) => {
+  res.status(404).send({ message: 'Link inexistente!' });
+});
