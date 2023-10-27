@@ -4,6 +4,10 @@ const {
   pessoasListId,
   pessoasAdd,
 } = require('./controllers/handlePessoas');
+const {
+  modalidadesList,
+  modalidadesListId,
+} = require('./controllers/handleModalidades');
 const app = express();
 const port = 3000;
 
@@ -26,11 +30,9 @@ app.get('/pessoas/:id', pessoasListId);
 app.post('/pessoas', pessoasAdd);
 
 // ----------------------------------------------------------------
-// modos de exportar
 
-// module.exports.nome = 'Jorge';
-// exports.Pessoa = Pessoa;
-// this.sobrenome = 'qualquer coisa';
+// GET: http://localhost:3000/modalidades
+app.get('/modalidades', modalidadesList);
 
-// exportar vários itens de uma vez, precisa ser: module.exports
-// module.exports = { nome, sobrenome, Pessoa };
+// GET: http://localhost:3000/modalidades/2
+app.get('/modalidades/:id', modalidadesListId);
