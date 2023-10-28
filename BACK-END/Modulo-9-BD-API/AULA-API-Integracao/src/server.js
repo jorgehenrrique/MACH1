@@ -19,6 +19,11 @@ const {
   ModalidadesPlanosListId,
   ModalidadesPlanosAdd,
 } = require('./controllers/handleModalidadesPlanos');
+const {
+  horariosAulasList,
+  horariosAulasListId,
+  horariosAulasAdd,
+} = require('./controllers/handleHorariosAulas');
 const app = express();
 const port = 3000;
 
@@ -74,6 +79,17 @@ app.get('/modalidadesplanos/:id', ModalidadesPlanosListId);
 
 // POST: http://localhost:3000/modalidadesplanos
 app.post('/modalidadesplanos/', ModalidadesPlanosAdd);
+
+// ----------------------------------------------------------------
+
+// GET: http://localhost:3000/horarioaulas
+app.get('/horarioaulas', horariosAulasList);
+
+// GET: http://localhost:3000/horarioaulas/:id
+app.get('/horarioaulas/:id', horariosAulasListId);
+
+// POST: http://localhost:3000/horarioaulas
+app.post('/horarioaulas/', horariosAulasAdd);
 
 // ----------------------------------------------------------------
 
