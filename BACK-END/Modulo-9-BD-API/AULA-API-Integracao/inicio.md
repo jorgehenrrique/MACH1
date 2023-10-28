@@ -41,6 +41,6 @@ Com base na aula passada complete sua aplicaçao com CRUD de todas as seguintes 
 - pessoas - OK
 - modalidades - OK
 - planos - OK
-- modalidades_planos -
+- modalidades_planos - OK
 - horarios_aulas -
 - matricula -
