@@ -1,9 +1,5 @@
 # NPM comandos básicos
 
-sintaxe: `npm install <packgeName>@<version> ou npm i`
-
-- `npm -v` checar versao
-
 Iniciar projeto:
 `npm init`
 
@@ -35,12 +31,3 @@ const { PASS } = process.env;
 
 Instalar ESLint para informar erros, e auxiliar no desenvolvimento
 `npm install eslint -D`
-
-Com base na aula passada complete sua aplicaçao com CRUD de todas as seguintes entidades:
-
-- pessoas - OK
-- modalidades - OK
-- planos - OK
-- modalidades_planos - OK
-- horarios_aulas - OK
-- matricula -
