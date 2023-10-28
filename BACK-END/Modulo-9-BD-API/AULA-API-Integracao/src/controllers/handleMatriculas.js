@@ -10,7 +10,7 @@ async function matriculasList(req, res) {
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar os horario_aulas',
+      error: 'Erro ao buscar as matriculas',
       message: error.message,
     });
   } finally {
@@ -42,18 +42,30 @@ async function matriculasAdd(req, res) {
   const db = createDBClient();
   await db.connect();
 
-  const { dia_semana, hora_inicio, hora_fim, modalidade_id, instrutor_id } =
-    req.body;
+  const {
+    aluno_id,
+    plano_id,
+    dia_vencimento,
+    valor_mensalidade,
+    data_inicio,
+    data_fim,
+  } = req.body;
 
   try {
-    const query = `INSERT INTO matriculas (dia_semana, hora_inicio, hora_fim, modalidade_id, instrutor_id)
-          VALUES ($1, $2, $3, $4, $5) Returning *;`;
+    const query = `INSERT INTO matriculas (aluno_id,
+      plano_id,
+      dia_vencimento,
+      valor_mensalidade,
+      data_inicio,
+      data_fim)
+          VALUES ($1, $2, $3, $4, $5, $6) Returning *;`;
     const values = [
-      dia_semana,
-      hora_inicio,
-      hora_fim,
-      modalidade_id,
-      instrutor_id,
+      aluno_id,
+      plano_id,
+      dia_vencimento,
+      valor_mensalidade,
+      data_inicio,
+      data_fim,
     ];
     const result = await db.query(query, values);
     res.json(result.rows[0]);
