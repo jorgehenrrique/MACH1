@@ -24,6 +24,11 @@ const {
   horariosAulasListId,
   horariosAulasAdd,
 } = require('./controllers/handleHorariosAulas');
+const {
+  matriculasList,
+  matriculasListId,
+  matriculasAdd,
+} = require('./controllers/handleMatriculas');
 const app = express();
 const port = 3000;
 
@@ -90,6 +95,17 @@ app.get('/horarioaulas/:id', horariosAulasListId);
 
 // POST: http://localhost:3000/horarioaulas
 app.post('/horarioaulas/', horariosAulasAdd);
+
+// ----------------------------------------------------------------
+
+// GET: http://localhost:3000/matriculas
+app.get('/matriculas', matriculasList);
+
+// GET: http://localhost:3000/matriculas/:id
+app.get('/matriculas/:id', matriculasListId);
+
+// POST: http://localhost:3000/matriculas
+app.post('/matriculas/', matriculasAdd);
 
 // ----------------------------------------------------------------
 
