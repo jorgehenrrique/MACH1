@@ -30,3 +30,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const { PASS } = process.env;
 ```
+
+---
+
+Instalar ESLint para informar erros, e auxiliar no desenvolvimento
+`npm install eslint -D`

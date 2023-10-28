@@ -21,6 +21,8 @@ async function planosList(req, res) {
 async function planosListId(req, res) {
   const db = createDBClient();
   await db.connect();
+
+  const { id } = req.params;
 }
 
 async function planosAdd(req, res) {
