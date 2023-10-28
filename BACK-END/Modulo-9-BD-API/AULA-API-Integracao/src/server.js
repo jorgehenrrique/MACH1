@@ -14,6 +14,11 @@ const {
   planosListId,
   planosAdd,
 } = require('./controllers/handlePlanos');
+const {
+  ModalidadesPlanosList,
+  ModalidadesPlanosListId,
+  ModalidadesPlanosAdd,
+} = require('./controllers/handleModalidadesPlanos');
 const app = express();
 const port = 3000;
 
@@ -58,6 +63,17 @@ app.get('/planos/:id', planosListId);
 
 // POST: http://localhost:3000/planos
 app.post('/planos/', planosAdd);
+
+// ----------------------------------------------------------------
+
+// GET: http://localhost:3000/modalidadesplanos
+app.get('/modalidadesplanos', ModalidadesPlanosList);
+
+// GET: http://localhost:3000/modalidadesplanos/:id
+app.get('/modalidadesplanos/:id', ModalidadesPlanosListId);
+
+// POST: http://localhost:3000/modalidadesplanos
+app.post('/modalidadesplanos/', ModalidadesPlanosAdd);
 
 // ----------------------------------------------------------------
 
