@@ -35,3 +35,12 @@ const { PASS } = process.env;
 
 Instalar ESLint para informar erros, e auxiliar no desenvolvimento
 `npm install eslint -D`
+
+Com base na aula passada complete sua aplicaçao com CRUD de todas as seguintes entidades:
+
+- pessoas - OK
+- modalidades - OK
+- planos - OK
+- modalidades_planos -
+- horarios_aulas -
+- matricula -
