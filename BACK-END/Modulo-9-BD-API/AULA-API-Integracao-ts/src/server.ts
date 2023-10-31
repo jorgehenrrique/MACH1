@@ -1,34 +1,10 @@
 import express from 'express';
-import {
-  pessoasList,
-  pessoasListId,
-  pessoasAdd,
-} from './controllers/handlePessoas';
-import {
-  modalidadesList,
-  modalidadesListId,
-  modalidadesAdd,
-} from './controllers/handleModalidades';
-import {
-  planosList,
-  planosListId,
-  planosAdd,
-} from './controllers/handlePlanos';
-import {
-  ModalidadesPlanosList,
-  ModalidadesPlanosListId,
-  ModalidadesPlanosAdd,
-} from './controllers/handleModalidadesPlanos';
-import {
-  horariosAulasList,
-  horariosAulasListId,
-  horariosAulasAdd,
-} from './controllers/handleHorariosAulas';
-import {
-  matriculasList,
-  matriculasListId,
-  matriculasAdd,
-} from './controllers/handleMatriculas';
+import * as pessoas from './controllers/handlePessoas';
+import * as modalidades from './controllers/handleModalidades';
+import * as planos from './controllers/handlePlanos';
+import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
+import * as horariosAulas from './controllers/handleHorariosAulas';
+import * as matriculas from './controllers/handleMatriculas';
 const app = express();
 const port = 3000;
 
@@ -43,69 +19,69 @@ app.listen(port, () => {
 
 // READ
 // GET: http://localhost:3000/pessoas
-app.get('/pessoas', pessoasList);
+app.get('/pessoas', pessoas.pessoasList);
 
 // GET: http://localhost:3000/pessoas/:id
-app.get('/pessoas/:id', pessoasListId);
+app.get('/pessoas/:id', pessoas.pessoasListId);
 
 // CREATE
 // POST: http://localhost:3000/pessoas
-app.post('/pessoas', pessoasAdd);
+app.post('/pessoas', pessoas.pessoasAdd);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidades
-app.get('/modalidades', modalidadesList);
+app.get('/modalidades', modalidades.modalidadesList);
 
 // GET: http://localhost:3000/modalidades/:id
-app.get('/modalidades/:id', modalidadesListId);
+app.get('/modalidades/:id', modalidades.modalidadesListId);
 
 // POST: http://localhost:3000/modalidades
-app.post('/modalidades', modalidadesAdd);
+app.post('/modalidades', modalidades.modalidadesAdd);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/planos
-app.get('/planos', planosList);
+app.get('/planos', planos.planosList);
 
 // GET: http://localhost:3000/planos/:id
-app.get('/planos/:id', planosListId);
+app.get('/planos/:id', planos.planosListId);
 
 // POST: http://localhost:3000/planos
-app.post('/planos/', planosAdd);
+app.post('/planos/', planos.planosAdd);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidadesplanos
-app.get('/modalidadesplanos', ModalidadesPlanosList);
+app.get('/modalidadesplanos', modalidadesPlanos.modalidadesPlanosList);
 
 // GET: http://localhost:3000/modalidadesplanos/:id
-app.get('/modalidadesplanos/:id', ModalidadesPlanosListId);
+app.get('/modalidadesplanos/:id', modalidadesPlanos.modalidadesPlanosListId);
 
 // POST: http://localhost:3000/modalidadesplanos
-app.post('/modalidadesplanos/', ModalidadesPlanosAdd);
+app.post('/modalidadesplanos/', modalidadesPlanos.modalidadesPlanosAdd);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/horarioaulas
-app.get('/horarioaulas', horariosAulasList);
+app.get('/horarioaulas', horariosAulas.horariosAulasList);
 
 // GET: http://localhost:3000/horarioaulas/:id
-app.get('/horarioaulas/:id', horariosAulasListId);
+app.get('/horarioaulas/:id', horariosAulas.horariosAulasListId);
 
 // POST: http://localhost:3000/horarioaulas
-app.post('/horarioaulas/', horariosAulasAdd);
+app.post('/horarioaulas/', horariosAulas.horariosAulasAdd);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/matriculas
-app.get('/matriculas', matriculasList);
+app.get('/matriculas', matriculas.matriculasList);
 
 // GET: http://localhost:3000/matriculas/:id
-app.get('/matriculas/:id', matriculasListId);
+app.get('/matriculas/:id', matriculas.matriculasListId);
 
 // POST: http://localhost:3000/matriculas
-app.post('/matriculas/', matriculasAdd);
+app.post('/matriculas/', matriculas.matriculasAdd);
 
 // ----------------------------------------------------------------
 

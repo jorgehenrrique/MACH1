@@ -1,6 +1,6 @@
 import createDBClient from '../db/connection';
 
-export async function ModalidadesPlanosList(_: any, res: any) {
+export async function modalidadesPlanosList(_: any, res: any) {
   const db = createDBClient();
   await db.connect();
 
@@ -18,7 +18,7 @@ export async function ModalidadesPlanosList(_: any, res: any) {
   }
 }
 
-export async function ModalidadesPlanosListId(req: any, res: any) {
+export async function modalidadesPlanosListId(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
 
@@ -41,7 +41,7 @@ export async function ModalidadesPlanosListId(req: any, res: any) {
   }
 }
 
-export async function ModalidadesPlanosAdd(req: any, res: any) {
+export async function modalidadesPlanosAdd(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
 
