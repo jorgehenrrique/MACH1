@@ -110,6 +110,6 @@ app.post('/matriculas/', matriculasAdd);
 // ----------------------------------------------------------------
 
 // Resposta padrão para quaisquer outras requisições:
-app.use((req: any, res: any) => {
+app.use((_: any, res: any) => {
   res.status(404).send({ message: 'Link inexistente!' });
 });
