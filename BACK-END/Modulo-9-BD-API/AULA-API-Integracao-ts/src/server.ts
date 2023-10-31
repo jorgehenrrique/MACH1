@@ -43,6 +43,9 @@ app.get('/modalidades/:id', modalidades.modalidadesListId);
 // POST: http://localhost:3000/modalidades
 app.post('/modalidades', modalidades.modalidadesAdd);
 
+// PUT: http://localhost:3000/modalidades
+app.put('/modalidades/:id', modalidades.modalidadesUpdate);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/planos

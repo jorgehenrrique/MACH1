@@ -22,12 +22,13 @@ export class ModalidadeService implements InterfaceCrud<ModalidadeModel> {
       'SELECT * FROM modalidades WHERE id=$1',
       [id]
     );
-    return result.rows as ModalidadeModel;
+    return result.rows[0] as ModalidadeModel;
   }
 
   async create(payload: ModalidadeModel): Promise<ModalidadeModel> {
     const { nome } = payload;
-    const query = `INSERT INTO modalidades (nome) VALUES ($1) Returning *;`;
+    const query = `INSERT INTO modalidades (nome)
+          VALUES ($1) Returning *;`;
     const values = [nome];
     const result = await this.db.query(query, values);
     return result.rows[0];
@@ -37,7 +38,8 @@ export class ModalidadeService implements InterfaceCrud<ModalidadeModel> {
     const { nome } = payload;
     const values = [nome, id];
     const result = await this.db.query(
-      'UPDATE modalidades SET nome=$1 WHERE id=$2 Returning *;',
+      `UPDATE modalidades
+      SET nome=$1 WHERE id=$2 Returning *;`,
       values
     );
     return result.rows[0];
