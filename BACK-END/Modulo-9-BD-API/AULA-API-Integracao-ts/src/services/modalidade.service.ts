@@ -27,7 +27,7 @@ export class ModalidadeService implements InterfaceCrud<ModalidadeModel> {
 
   async create(payload: ModalidadeModel): Promise<ModalidadeModel> {
     const { nome } = payload;
-    const query = `INSERT INTO modalidades (nome) values ($1) Returning *;`;
+    const query = `INSERT INTO modalidades (nome) VALUES ($1) Returning *;`;
     const values = [nome];
     const result = await this.db.query(query, values);
     return result.rows[0];

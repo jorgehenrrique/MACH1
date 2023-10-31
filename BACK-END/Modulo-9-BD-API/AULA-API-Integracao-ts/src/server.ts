@@ -28,6 +28,10 @@ app.get('/pessoas/:id', pessoas.pessoasListId);
 // POST: http://localhost:3000/pessoas
 app.post('/pessoas', pessoas.pessoasAdd);
 
+// UPDATE
+// PUT: http://localhost:3000/pessoas
+app.put('/pessoas/:id', pessoas.pessoasUpdate);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidades

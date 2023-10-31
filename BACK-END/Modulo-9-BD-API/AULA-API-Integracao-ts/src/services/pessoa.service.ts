@@ -26,14 +26,14 @@ export class PessoaService implements InterfaceCrud<PessoaModel> {
     const result = await this.db.query('SELECT * FROM pessoas WHERE id=$1', [
       id,
     ]);
-    return result.rows as PessoaModel;
+    return result.rows[0] as PessoaModel;
   }
 
   async create(payload: PessoaModel): Promise<PessoaModel> {
     const { nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo } = payload;
     const query = `
     INSERT INTO pessoas (nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo) 
-    values ($1,$2,$3,$4,$5,$6) Returning *;`;
+    VALUES ($1, $2, $3, $4, $5, $6) Returning *;`;
     const values = [nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo];
     const result = await this.db.query(query, values);
     return result.rows[0];

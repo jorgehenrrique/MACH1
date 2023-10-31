@@ -1,13 +1,15 @@
 import createDBClient from '../db/connection';
+import { PessoaService } from '../services/pessoa.service';
 
 // Lista pessoas
 export async function pessoasList(_: any, res: any) {
   const db = createDBClient();
-  db.connect();
+  await db.connect();
+  const pessoaService = new PessoaService(db);
 
   try {
-    const result = await db.query('SELECT * FROM pessoas');
-    res.json(result.rows);
+    const users = await pessoaService.getAll();
+    res.json(users);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -23,12 +25,13 @@ export async function pessoasList(_: any, res: any) {
 export async function pessoasListId(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const pessoaService = new PessoaService(db);
 
   const { id } = req.params;
 
   try {
-    const result = await db.query('SELECT * FROM pessoas WHERE id=$1', [id]);
-    res.json(result.rows[0]);
+    const user = await pessoaService.find(id);
+    res.json(user);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -44,16 +47,30 @@ export async function pessoasListId(req: any, res: any) {
 export async function pessoasAdd(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
-
-  const { nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo } = req.body;
+  const pessoaService = new PessoaService(db);
 
   try {
-    const query = `INSERT INTO pessoas (nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo)
-          VALUES ($1, $2, $3, $4, $5, $6) Returning *;`;
+    const user = await pessoaService.create(req.body);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
 
-    const values = [nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo];
-    const result = await db.query(query, values);
-    res.json(result.rows[0]);
+// Atualizar pessoas
+export async function pessoasUpdate(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const pessoaService = new PessoaService(db);
+
+  try {
+    const user = await pessoaService.update(req.params.id, req.body);
+    res.json(user);
   } catch (error: any) {
     res.status(500).json({
       error,
