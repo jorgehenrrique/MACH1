@@ -1,12 +1,14 @@
 import createDBClient from '../db/connection';
+import { ModalidadePlanoService } from '../services/modalidadeplano.service';
 
 export async function modalidadesPlanosList(_: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const modalidadePlanoService = new ModalidadePlanoService(db);
 
   try {
-    const result = await db.query('SELECT * FROM modalidades_planos');
-    res.json(result.rows);
+    const modalidadesPlanos = await modalidadePlanoService.getAll();
+    res.json(modalidadesPlanos);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -21,15 +23,13 @@ export async function modalidadesPlanosList(_: any, res: any) {
 export async function modalidadesPlanosListId(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const modalidadePlanoService = new ModalidadePlanoService(db);
 
   const { id } = req.params;
 
   try {
-    const result = await db.query(
-      'SELECT * FROM modalidades_planos WHERE plano_id=$1 OR modalidade_id=$1',
-      [id]
-    );
-    res.json(result.rows[0]);
+    const modalidadePlano = await modalidadePlanoService.find(id);
+    res.json(modalidadePlano);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -44,15 +44,32 @@ export async function modalidadesPlanosListId(req: any, res: any) {
 export async function modalidadesPlanosAdd(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
-
-  const { plano_id, modalidade_id } = req.body;
+  const modalidadePlanoService = new ModalidadePlanoService(db);
 
   try {
-    const query = `INSERT INTO modalidades_planos (plano_id, modalidade_id)
-          VALUES ($1, $2) Returning *;`;
-    const values = [plano_id, modalidade_id];
-    const result = await db.query(query, values);
-    res.json(result.rows[0]);
+    const modalidadePlano = await modalidadePlanoService.create(req.body);
+    res.json(modalidadePlano);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
+
+export async function modalidadesplanosUpdate(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const modalidadePlanoService = new ModalidadePlanoService(db);
+
+  try {
+    const modalidadePlano = await modalidadePlanoService.update(
+      req.params.id,
+      req.body
+    );
+    res.json(modalidadePlano);
   } catch (error: any) {
     res.status(500).json({
       error,

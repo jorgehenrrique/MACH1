@@ -71,6 +71,9 @@ app.get('/modalidadesplanos/:id', modalidadesPlanos.modalidadesPlanosListId);
 // POST: http://localhost:3000/modalidadesplanos
 app.post('/modalidadesplanos/', modalidadesPlanos.modalidadesPlanosAdd);
 
+// PUT: http://localhost:3000/modalidadesplanos/:id
+app.put('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosUpdate);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/horarioaulas
