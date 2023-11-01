@@ -1,12 +1,14 @@
 import createDBClient from '../db/connection';
+import { PlanoService } from '../services/plano.service';
 
 export async function planosList(_: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const planoService = new PlanoService(db);
 
   try {
-    const result = await db.query('SELECT * FROM planos');
-    res.json(result.rows);
+    const planos = await planoService.getAll();
+    res.json(planos);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -21,12 +23,13 @@ export async function planosList(_: any, res: any) {
 export async function planosListId(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const planoService = new PlanoService(db);
 
   const { id } = req.params;
 
   try {
-    const result = await db.query('SELECT * FROM planos WHERE id=$1', [id]);
-    res.json(result.rows[0]);
+    const plano = await planoService.find(id);
+    res.json(plano);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -41,15 +44,29 @@ export async function planosListId(req: any, res: any) {
 export async function planosAdd(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
-
-  const { nome, descricao, preco } = req.body;
+  const planoService = new PlanoService(db);
 
   try {
-    const query = `INSERT INTO planos (nome, descricao, preco)
-          VALUES ($1, $2, $3) Returning *;`;
-    const values = [nome, descricao, preco];
-    const result = await db.query(query, values);
-    res.json(result.rows[0]);
+    const plano = await planoService.create(req.body);
+    res.json(plano);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
+
+export async function planosUpdate(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const planoService = new PlanoService(db);
+
+  try {
+    const plano = await planoService.update(req.params.id, req.body);
+    res.json(plano);
   } catch (error: any) {
     res.status(500).json({
       error,
