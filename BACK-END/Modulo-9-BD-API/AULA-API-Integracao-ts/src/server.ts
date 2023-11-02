@@ -118,6 +118,9 @@ app.post('/matriculas/', matriculas.matriculasAdd);
 // PUT: http://localhost:3000/matriculas/:id
 app.put('/matriculas/:id', matriculas.matriculasUpdate);
 
+// DELETE: http://localhost:3000/matriculas/:id
+app.delete('/matriculas/:id', matriculas.matriculasDelete);
+
 // ----------------------------------------------------------------
 
 // Resposta padrão para quaisquer outras requisições:

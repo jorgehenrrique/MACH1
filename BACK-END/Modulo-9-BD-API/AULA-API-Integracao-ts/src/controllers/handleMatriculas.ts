@@ -76,3 +76,21 @@ export async function matriculasUpdate(req: any, res: any) {
     await db.end();
   }
 }
+
+export async function matriculasDelete(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const matriculaService = new MatriculaService(db);
+
+  try {
+    const user = await matriculaService.delete(req.params.id);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}

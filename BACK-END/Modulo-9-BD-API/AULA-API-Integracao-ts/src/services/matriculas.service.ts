@@ -82,7 +82,11 @@ export class MatriculaService implements InterfaceCrud<MatriculaModel> {
     return result.rows[0];
   }
 
-  delete(id: string): Promise<void> {
-    throw new Error('Method not implemented.');
+  async delete(id: string): Promise<void> {
+    const result = await this.db.query(
+      'DELETE FROM matriculas WHERE id=$1 Returning *;',
+      [id]
+    );
+    return result.rows[0];
   }
 }
