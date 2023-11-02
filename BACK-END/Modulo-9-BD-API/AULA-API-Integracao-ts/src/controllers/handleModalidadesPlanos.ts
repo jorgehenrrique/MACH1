@@ -1,5 +1,5 @@
 import createDBClient from '../db/connection';
-import { ModalidadePlanoService } from '../services/modalidadeplano.service';
+import { ModalidadePlanoService } from '../services/modalidadePlano.service';
 
 export async function modalidadesPlanosList(_: any, res: any) {
   const db = createDBClient();

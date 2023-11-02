@@ -85,6 +85,9 @@ app.get('/horarioaulas/:id', horariosAulas.horariosAulasListId);
 // POST: http://localhost:3000/horarioaulas
 app.post('/horarioaulas/', horariosAulas.horariosAulasAdd);
 
+// PUT: http://localhost:3000/horarioaulas/:id
+app.put('/horarioaulas/:id', horariosAulas.horariosAulasUpdate);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/matriculas
