@@ -69,7 +69,24 @@ export async function pessoasUpdate(req: any, res: any) {
   const pessoaService = new PessoaService(db);
 
   try {
-    const user = await pessoaService.update(req.params.id, req.body);
+    const userId = await pessoaService.find(req.params.id);
+    const payload: {
+      nome: string;
+      cgc: string;
+      tipo_pessoa: string;
+      email: string;
+      tipo_cadastro: string;
+      ativo: string;
+    } = {
+      nome: req.body.nome || userId.nome,
+      cgc: req.body.cgc || userId.cgc,
+      tipo_pessoa: req.body.tipo_pessoa || userId.tipo_pessoa,
+      email: req.body.email || userId.email,
+      tipo_cadastro: req.body.tipo_cadastro || userId.tipo_cadastro,
+      ativo: req.body.ativo || userId.ativo,
+    };
+
+    const user = await pessoaService.update(req.params.id, payload);
     res.json(user);
   } catch (error: any) {
     res.status(500).json({

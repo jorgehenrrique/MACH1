@@ -40,10 +40,12 @@ export class PessoaService implements InterfaceCrud<PessoaModel> {
   }
 
   async update(id: string, payload: PessoaModel): Promise<PessoaModel> {
-    const { nome, email } = payload;
-    const values = [nome, email, id];
+    const { nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo } = payload;
+    const values = [nome, cgc, tipo_pessoa, email, tipo_cadastro, ativo, id];
     const result = await this.db.query(
-      'UPDATE pessoas SET nome=$1, email=$2 WHERE id=$3 Returning *;',
+      `UPDATE pessoas
+      SET nome=$1, cgc=$2, tipo_pessoa=$3, email=$4, tipo_cadastro=$5, ativo=$6
+      WHERE id=$7 Returning *;`,
       values
     );
     return result.rows[0];
