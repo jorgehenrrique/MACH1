@@ -63,12 +63,19 @@ export async function horariosAulasUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const horarioAulaService = new HorarioAulaService(db);
+  const { id } = req.params;
 
   try {
-    const horarioAula = await horarioAulaService.update(
-      req.params.id,
-      req.body
-    );
+    const horarioAulaId = await horarioAulaService.find(id);
+    const payload = {
+      dia_semana: req.body.dia_semana || horarioAulaId.dia_semana,
+      hora_inicio: req.body.hora_inicio || horarioAulaId.hora_inicio,
+      hora_fim: req.body.hora_fim || horarioAulaId.hora_fim,
+      modalidade_id: req.body.modalidade_id || horarioAulaId.modalidade_id,
+      instrutor_id: req.body.instrutor_id || horarioAulaId.instrutor_id,
+    };
+
+    const horarioAula = await horarioAulaService.update(id, payload);
     res.json(horarioAula);
   } catch (error: any) {
     res.status(500).json({
