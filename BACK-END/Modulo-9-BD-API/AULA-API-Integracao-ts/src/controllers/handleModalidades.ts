@@ -65,8 +65,13 @@ export async function modalidadesUpdate(req: any, res: any) {
   const modalidadeService = new ModalidadeService(db);
 
   try {
-    const user = await modalidadeService.update(req.params.id, req.body);
-    res.json(user);
+    const modalidadeId = await modalidadeService.find(req.params.id);
+    const payload = {
+      nome: req.body.nome || modalidadeId.nome,
+    };
+
+    const modalidade = await modalidadeService.update(req.params.id, payload);
+    res.json(modalidade);
   } catch (error: any) {
     res.status(500).json({
       error,
