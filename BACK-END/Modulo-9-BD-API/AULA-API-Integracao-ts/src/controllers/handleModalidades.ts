@@ -76,3 +76,21 @@ export async function modalidadesUpdate(req: any, res: any) {
     await db.end();
   }
 }
+
+export async function modalidadesDelete(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const modalidadeService = new ModalidadeService(db);
+
+  try {
+    const user = await modalidadeService.delete(req.params.id);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}

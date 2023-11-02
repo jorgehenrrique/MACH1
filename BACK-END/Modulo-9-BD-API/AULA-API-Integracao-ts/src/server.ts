@@ -50,6 +50,9 @@ app.post('/modalidades', modalidades.modalidadesAdd);
 // PUT: http://localhost:3000/modalidades/:id
 app.put('/modalidades/:id', modalidades.modalidadesUpdate);
 
+// DELETE: http://localhost:3000/modalidades/:id
+app.delete('/modalidades/:id', modalidades.modalidadesDelete);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/planos
