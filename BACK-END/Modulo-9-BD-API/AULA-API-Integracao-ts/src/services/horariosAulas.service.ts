@@ -66,4 +66,8 @@ export class HorarioAulaService implements InterfaceCrud<HorarioAulaModel> {
     const result = await this.db.query(query, values);
     return result.rows[0];
   }
+
+  delete(id: string): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
 }

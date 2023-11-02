@@ -32,6 +32,10 @@ app.post('/pessoas', pessoas.pessoasAdd);
 // PUT: http://localhost:3000/pessoas/:id
 app.put('/pessoas/:id', pessoas.pessoasUpdate);
 
+// DELETE
+// DELETE: http://localhost:3000/pessoas/:id
+app.delete('/pessoas/:id', pessoas.pessoasDelete);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidades

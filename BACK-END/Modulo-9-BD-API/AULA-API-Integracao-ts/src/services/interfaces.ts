@@ -5,4 +5,5 @@ export interface InterfaceCrud<DTO> {
   find(id: string): Promise<DTO>;
   create(payload: DTO): Promise<DTO>;
   update(id: string, payload: DTO): Promise<DTO>;
+  delete(id: string): Promise<void>;
 }

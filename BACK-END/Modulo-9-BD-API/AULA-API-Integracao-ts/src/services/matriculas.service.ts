@@ -81,4 +81,8 @@ export class MatriculaService implements InterfaceCrud<MatriculaModel> {
     const result = await this.db.query(query, values);
     return result.rows[0];
   }
+
+  delete(id: string): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
 }

@@ -48,4 +48,12 @@ export class PessoaService implements InterfaceCrud<PessoaModel> {
     );
     return result.rows[0];
   }
+
+  async delete(id: string): Promise<void> {
+    const result = await this.db.query(
+      'DELETE FROM pessoas WHERE id=$1 Returning *;',
+      [id]
+    );
+    return result.rows[0];
+  }
 }

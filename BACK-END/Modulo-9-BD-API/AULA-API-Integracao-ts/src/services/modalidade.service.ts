@@ -44,4 +44,8 @@ export class ModalidadeService implements InterfaceCrud<ModalidadeModel> {
     );
     return result.rows[0];
   }
+
+  delete(id: string): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
 }

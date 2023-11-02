@@ -45,4 +45,8 @@ export class ModalidadePlanoService implements InterfaceCrud<MPModel> {
     );
     return result.rows[0];
   }
+
+  delete(id: string): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
 }
