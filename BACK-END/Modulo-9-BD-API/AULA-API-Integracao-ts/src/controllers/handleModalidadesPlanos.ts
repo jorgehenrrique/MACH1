@@ -63,12 +63,16 @@ export async function modalidadesplanosUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const modalidadePlanoService = new ModalidadePlanoService(db);
+  const { id } = req.params;
 
   try {
-    const modalidadePlano = await modalidadePlanoService.update(
-      req.params.id,
-      req.body
-    );
+    const modalidadePlanoId = await modalidadePlanoService.find(id);
+    const payload = {
+      plano_id: req.body.plano_id || modalidadePlanoId.plano_id,
+      modalidade_id: req.body.plano_id || modalidadePlanoId.plano_id,
+    };
+
+    const modalidadePlano = await modalidadePlanoService.update(id, payload);
     res.json(modalidadePlano);
   } catch (error: any) {
     res.status(500).json({
