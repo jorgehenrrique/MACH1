@@ -63,9 +63,17 @@ export async function planosUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const planoService = new PlanoService(db);
+  const { id } = req.params;
 
   try {
-    const plano = await planoService.update(req.params.id, req.body);
+    const planoId = await planoService.find(id);
+    const payload = {
+      nome: req.body.nome || planoId.nome,
+      descricao: req.body.descricao || planoId.descricao,
+      preco: req.body.preco || planoId.preco,
+    };
+
+    const plano = await planoService.update(id, payload);
     res.json(plano);
   } catch (error: any) {
     res.status(500).json({
