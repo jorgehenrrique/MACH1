@@ -47,7 +47,11 @@ export class PlanoService implements InterfaceCrud<PlanoModel> {
     return result.rows[0];
   }
 
-  delete(id: string): Promise<void> {
-    throw new Error('Method not implemented.');
+  async delete(id: string): Promise<void> {
+    const result = await this.db.query(
+      'DELETE FROM planos WHERE id=$1 Returning *;',
+      [id]
+    );
+    return result.rows[0];
   }
 }

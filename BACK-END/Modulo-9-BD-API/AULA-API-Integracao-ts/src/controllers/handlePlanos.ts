@@ -76,3 +76,21 @@ export async function planosUpdate(req: any, res: any) {
     await db.end();
   }
 }
+
+export async function planosDelete(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const planoService = new PlanoService(db);
+
+  try {
+    const user = await planoService.delete(req.params.id);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}

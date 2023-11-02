@@ -67,6 +67,9 @@ app.post('/planos/', planos.planosAdd);
 // PUT: http://localhost:3000/planos/:id
 app.put('/planos/:id', planos.planosUpdate);
 
+// DELETE: http://localhost:3000/planos/:id
+app.delete('/planos/:id', planos.planosDelete);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidadesplanos
