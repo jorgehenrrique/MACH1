@@ -63,14 +63,15 @@ export async function modalidadesUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const modalidadeService = new ModalidadeService(db);
+  const { id } = req.params;
 
   try {
-    const modalidadeId = await modalidadeService.find(req.params.id);
+    const modalidadeId = await modalidadeService.find(id);
     const payload = {
       nome: req.body.nome || modalidadeId.nome,
     };
 
-    const modalidade = await modalidadeService.update(req.params.id, payload);
+    const modalidade = await modalidadeService.update(id, payload);
     res.json(modalidade);
   } catch (error: any) {
     res.status(500).json({

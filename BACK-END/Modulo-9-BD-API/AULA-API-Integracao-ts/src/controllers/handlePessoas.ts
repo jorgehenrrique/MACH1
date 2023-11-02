@@ -67,9 +67,10 @@ export async function pessoasUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const pessoaService = new PessoaService(db);
+  const { id } = req.params;
 
   try {
-    const userId = await pessoaService.find(req.params.id);
+    const userId = await pessoaService.find(id);
     const payload: {
       nome: string;
       cgc: string;
@@ -86,7 +87,7 @@ export async function pessoasUpdate(req: any, res: any) {
       ativo: req.body.ativo || userId.ativo,
     };
 
-    const user = await pessoaService.update(req.params.id, payload);
+    const user = await pessoaService.update(id, payload);
     res.json(user);
   } catch (error: any) {
     res.status(500).json({
