@@ -1,6 +1,6 @@
 import { InterfaceCrud } from './interfaces';
 
-type HorarioAulasModel = {
+type HorarioAulaModel = {
   id?: string;
   dia_semana: string;
   hora_inicio: string;
@@ -9,19 +9,19 @@ type HorarioAulasModel = {
   instrutor_id: string;
 };
 
-export class HorarioAulaService implements InterfaceCrud<HorarioAulasModel> {
+export class HorarioAulaService implements InterfaceCrud<HorarioAulaModel> {
   db: any;
 
   constructor(db: any) {
     this.db = db;
   }
 
-  async getAll(): Promise<HorarioAulasModel[]> {
+  async getAll(): Promise<HorarioAulaModel[]> {
     const result = await this.db.query('SELECT * FROM horario_aulas');
     return result.rows;
   }
 
-  async find(id: string): Promise<HorarioAulasModel> {
+  async find(id: string): Promise<HorarioAulaModel> {
     const result = await this.db.query(
       'SELECT * FROM horario_aulas WHERE id=$1',
       [id]
@@ -29,7 +29,7 @@ export class HorarioAulaService implements InterfaceCrud<HorarioAulasModel> {
     return result.rows[0];
   }
 
-  async create(payload: HorarioAulasModel): Promise<HorarioAulasModel> {
+  async create(payload: HorarioAulaModel): Promise<HorarioAulaModel> {
     const { dia_semana, hora_inicio, hora_fim, modalidade_id, instrutor_id } =
       payload;
     const query = `INSERT INTO horario_aulas (dia_semana, hora_inicio, hora_fim, modalidade_id, instrutor_id)
@@ -48,8 +48,8 @@ export class HorarioAulaService implements InterfaceCrud<HorarioAulasModel> {
 
   async update(
     id: string,
-    payload: HorarioAulasModel
-  ): Promise<HorarioAulasModel> {
+    payload: HorarioAulaModel
+  ): Promise<HorarioAulaModel> {
     const { dia_semana, hora_inicio, hora_fim, modalidade_id, instrutor_id } =
       payload;
     const values = [

@@ -1,12 +1,14 @@
 import createDBClient from '../db/connection';
+import { MatriculaService } from '../services/matriculas.service';
 
 export async function matriculasList(_: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const matriculaService = new MatriculaService(db);
 
   try {
-    const result = await db.query('SELECT * FROM matriculas');
-    res.json(result.rows);
+    const matriculas = await matriculaService.getAll();
+    res.json(matriculas);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -21,12 +23,13 @@ export async function matriculasList(_: any, res: any) {
 export async function matriculasListId(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
+  const matriculaService = new MatriculaService(db);
 
   const { id } = req.params;
 
   try {
-    const result = await db.query('SELECT * FROM matriculas WHERE id=$1', [id]);
-    res.json(result.rows[0]);
+    const matricula = await matriculaService.find(id);
+    res.json(matricula);
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
@@ -41,34 +44,29 @@ export async function matriculasListId(req: any, res: any) {
 export async function matriculasAdd(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
-
-  const {
-    aluno_id,
-    plano_id,
-    dia_vencimento,
-    valor_mensalidade,
-    data_inicio,
-    data_fim,
-  } = req.body;
+  const matriculaService = new MatriculaService(db);
 
   try {
-    const query = `INSERT INTO matriculas (aluno_id,
-      plano_id,
-      dia_vencimento,
-      valor_mensalidade,
-      data_inicio,
-      data_fim)
-          VALUES ($1, $2, $3, $4, $5, $6) Returning *;`;
-    const values = [
-      aluno_id,
-      plano_id,
-      dia_vencimento,
-      valor_mensalidade,
-      data_inicio,
-      data_fim,
-    ];
-    const result = await db.query(query, values);
-    res.json(result.rows[0]);
+    const matricula = await matriculaService.create(req.body);
+    res.json(matricula);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
+
+export async function matriculasUpdate(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const matriculaService = new MatriculaService(db);
+
+  try {
+    const matricula = await matriculaService.update(req.params.id, req.body);
+    res.json(matricula);
   } catch (error: any) {
     res.status(500).json({
       error,

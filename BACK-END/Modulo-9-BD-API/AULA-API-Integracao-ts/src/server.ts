@@ -99,6 +99,9 @@ app.get('/matriculas/:id', matriculas.matriculasListId);
 // POST: http://localhost:3000/matriculas
 app.post('/matriculas/', matriculas.matriculasAdd);
 
+// PUT: http://localhost:3000/matriculas/:id
+app.put('/matriculas/:id', matriculas.matriculasUpdate);
+
 // ----------------------------------------------------------------
 
 // Resposta padrão para quaisquer outras requisições:
