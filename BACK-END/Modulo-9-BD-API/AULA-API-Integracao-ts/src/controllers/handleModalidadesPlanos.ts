@@ -79,3 +79,21 @@ export async function modalidadesplanosUpdate(req: any, res: any) {
     await db.end();
   }
 }
+
+export async function modalidadesplanosDelete(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const modalidadePlanoService = new ModalidadePlanoService(db);
+
+  try {
+    const user = await modalidadePlanoService.delete(req.params.id);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}

@@ -84,6 +84,9 @@ app.post('/modalidadesplanos/', modalidadesPlanos.modalidadesPlanosAdd);
 // PUT: http://localhost:3000/modalidadesplanos/:id
 app.put('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosUpdate);
 
+// DELETE: http://localhost:3000/modalidadesplanos/:id
+app.delete('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosDelete);
+
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/horarioaulas
@@ -97,6 +100,9 @@ app.post('/horarioaulas/', horariosAulas.horariosAulasAdd);
 
 // PUT: http://localhost:3000/horarioaulas/:id
 app.put('/horarioaulas/:id', horariosAulas.horariosAulasUpdate);
+
+// DELETE: http://localhost:3000/horarioaulas/:id
+app.delete('/horarioaulas/:id', horariosAulas.horariosAulasDelete);
 
 // ----------------------------------------------------------------
 

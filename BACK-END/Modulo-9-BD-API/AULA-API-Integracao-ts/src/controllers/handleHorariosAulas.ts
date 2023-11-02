@@ -79,3 +79,21 @@ export async function horariosAulasUpdate(req: any, res: any) {
     await db.end();
   }
 }
+
+export async function horariosAulasDelete(req: any, res: any) {
+  const db = createDBClient();
+  await db.connect();
+  const horarioAulaService = new HorarioAulaService(db);
+
+  try {
+    const user = await horarioAulaService.delete(req.params.id);
+    res.json(user);
+  } catch (error: any) {
+    res.status(500).json({
+      error,
+      message: error.message,
+    });
+  } finally {
+    await db.end();
+  }
+}
